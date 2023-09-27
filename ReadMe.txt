@@ -29,6 +29,9 @@ if done correctly you should be in the debug folder.
 			retro_computer_personal_use.ttf
 3 - Click the Install button located at the top left.
 
+If it is not in that directory it will be attached as 
+retro_computer_personal_use.ttf in the main directory of this folder
+
 //----------------------------------------------------------------------------//
 //Running
 Follow these steps to run the application:
@@ -40,6 +43,9 @@ if done correctly you should be in the debug folder.
 2 - locate and double click the file that says: 
 			DDS_Trainer.exe
 3 - The application should launch and you will be greeted with the Main Menu.
+
+If the exe is not available please run the .sln in the main directory of this
+folder
 
 //----------------------------------------------------------------------------//
 //Main Menu
