@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E281A20D-4A05-42F9-930F-DC79C3498380}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DDS_Trainer</RootNamespace>
+    <AssemblyName>DDS_Trainer</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Book.cs" />
+    <Compile Include="Classes\LeaderboardPLayers.cs" />
+    <Compile Include="Classes\SubmissionPoint.cs" />
+    <Compile Include="Components\CntrlHighScore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\CntrlHighScore.Designer.cs">
+      <DependentUpon>CntrlHighScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CntrlLeaderboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\CntrlLeaderboard.Designer.cs">
+      <DependentUpon>CntrlLeaderboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CntrlRBGame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\CntrlRBGame.Designer.cs">
+      <DependentUpon>CntrlRBGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmClose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmClose.Designer.cs">
+      <DependentUpon>FrmClose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmHighScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHighScore.Designer.cs">
+      <DependentUpon>FrmHighScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMainMenu.Designer.cs">
+      <DependentUpon>FrmMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRBGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRBGame.Designer.cs">
+      <DependentUpon>FrmRBGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Components\CntrlHighScore.resx">
+      <DependentUpon>CntrlHighScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\CntrlLeaderboard.resx">
+      <DependentUpon>CntrlLeaderboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\CntrlRBGame.resx">
+      <DependentUpon>CntrlRBGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmClose.resx">
+      <DependentUpon>FrmClose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmHighScore.resx">
+      <DependentUpon>FrmHighScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMainMenu.resx">
+      <DependentUpon>FrmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRBGame.resx">
+      <DependentUpon>FrmRBGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Fonts\retro_computer_personal_use.ttf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Icon_Tutorial.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\BackArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\BackArrow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\2048px-Back_Arrow.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c806f2002fff400b6f8191177df3b278.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OpenBook-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OpenBook noBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DDSLibrary\DDSLibrary.csproj">
+      <Project>{22b69e1d-ce79-49b6-9a93-f7fc6aa7c548}</Project>
+      <Name>DDSLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ClosedBookBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\pixelDesktop.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Images\PixWallOfBooks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\CloseButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\PixStopWatch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\PixWoodTexture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\tableCloth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\PixBlueCloth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\PixWrinkledPaper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\output-onlinepngtools %2814%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\output-onlinepngtools %2815%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\output-onlinepngtools %2816%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\back-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\CloseApp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\RBActivityIcon-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\RBActivityIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IAActivityIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\FCNActivityIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\QuestionMark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\NoButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Exit-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\YellowWhiteStripedBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\SaveButton.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
