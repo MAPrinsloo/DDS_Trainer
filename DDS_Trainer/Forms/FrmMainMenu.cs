@@ -21,7 +21,7 @@ namespace DDS_Trainer.Forms
         //Form that prompts the user if they would like to exit the app.
         private FrmClose frmClose = new FrmClose(message: "Are you sure you want to exit the application?", endApplication: true);
         //Name of the text file used to display info onto the leaderboard user control.
-        private string LbDisplayTxtName = "RBScoreDisplay.txt";
+        public string LbDisplayTxtName = "RBScoreDisplay.txt";
 
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
@@ -31,9 +31,9 @@ namespace DDS_Trainer.Forms
         {
             InitializeComponent();
             //Ensures that the leaderboard is up to date with the text files.
-            UpdateCntrlLeaderboard();
+            UpdateCntrlLeaderboard("Replacing Books");
             //Event Handler, event triggered by frmClose.
-            frmClose.ExitApplicaton += ExitApplication;
+            this.frmClose.ExitApplicaton += ExitApplication;
         }
         //-----------------------------------------------------------------------------------------------//
         #region Form Operations
@@ -52,6 +52,19 @@ namespace DDS_Trainer.Forms
         }
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
+        /// Opens the Form "FrmIAGame"
+        /// Displays FrmIAGame on a stack using ShowDialog()        
+        /// /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnIdentifyingAreas_Click(object sender, EventArgs e)
+        {
+            //We pass this form into the constructor so that FrmIAGame can have access to updating the leaderboard.
+            FrmIAGame frmIdentifyingAreasGame = new FrmIAGame(this);
+            frmIdentifyingAreasGame.ShowDialog();
+        }
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
         /// Queries user to if they would like to close the application
         /// Displays FrmClose on a stack using ShowDialog()
         /// </summary>
@@ -62,16 +75,15 @@ namespace DDS_Trainer.Forms
             frmClose.ShowDialog();
         }
         #endregion
-
         //-----------------------------------------------------------------------------------------------//
         #region Methods
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
         /// Uses a formatted text file to display a leaderbaord in the CntrlLeaderboard user control.
         /// </summary>
-        public void UpdateCntrlLeaderboard() 
+        public void UpdateCntrlLeaderboard(string GameName) 
         {
-            cntrlLeaderboard1.UpdateLeaderBoard(LbDisplayTxtName);
+            cntrlLeaderboard1.UpdateLeaderBoard(LbDisplayTxtName, GameName);
         }
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
@@ -84,6 +96,8 @@ namespace DDS_Trainer.Forms
             Application.Exit();
         }
         #endregion
+
+       
     }
 }
 //===============================================================================================//

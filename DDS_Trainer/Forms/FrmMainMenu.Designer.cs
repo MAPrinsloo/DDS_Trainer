@@ -77,6 +77,7 @@
             this.btnIdentifyingAreas.Text = "Identifying-Areas.exe";
             this.btnIdentifyingAreas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnIdentifyingAreas.UseVisualStyleBackColor = false;
+            this.btnIdentifyingAreas.Click += new System.EventHandler(this.btnIdentifyingAreas_Click);
             // 
             // btnFindingCallNumb
             // 
@@ -129,10 +130,10 @@
             this.cntrlLeaderboard1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cntrlLeaderboard1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cntrlLeaderboard1.BackgroundImage")));
             this.cntrlLeaderboard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cntrlLeaderboard1.Location = new System.Drawing.Point(982, 317);
-            this.cntrlLeaderboard1.MaximumSize = new System.Drawing.Size(300, 350);
+            this.cntrlLeaderboard1.Location = new System.Drawing.Point(985, 248);
+            this.cntrlLeaderboard1.MaximumSize = new System.Drawing.Size(300, 400);
             this.cntrlLeaderboard1.Name = "cntrlLeaderboard1";
-            this.cntrlLeaderboard1.Size = new System.Drawing.Size(300, 331);
+            this.cntrlLeaderboard1.Size = new System.Drawing.Size(300, 400);
             this.cntrlLeaderboard1.TabIndex = 6;
             // 
             // FrmMainMenu

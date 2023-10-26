@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace DDS_Trainer.Forms
 {
-    public partial class FrmRBGame : Form
+    public partial class FrmIAGame : Form
     {
         //Create an object of FrmMainMenu
         private FrmMainMenu MainMenu;
@@ -27,21 +27,21 @@ namespace DDS_Trainer.Forms
         /// Paramaterised Constructor, we pass 
         /// </summary>
         /// <param name="mainMenu"></param>
-        public FrmRBGame(FrmMainMenu mainMenu)
+        public FrmIAGame(FrmMainMenu mainMenu)
         {
             InitializeComponent();
             this.MainMenu = mainMenu;
-            //Subscribed to event handler that is triggered by CntrlRBGame.
-            cntrlRBGame1.GameOver += RBGame_GameOver;
+            //Subscribed to event handler that is triggered by CntrlIAGame.
+            cntrlIAGame1.GameOver += IAGame_GameOver;
             //Subscribed to event handler that is triggered by frmClose.
-            frmClose.GoBack += Goback;
+            this.frmClose.GoBack += Goback;
 
         }
         //-----------------------------------------------------------------------------------------------//
         #region Form Operations
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
-        /// 
+        /// Back button is clicked
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -58,7 +58,7 @@ namespace DDS_Trainer.Forms
         /// </summary>
         public void Back()
         {
-            frmClose.ShowDialog();
+            this.frmClose.ShowDialog();
         }
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
@@ -69,16 +69,16 @@ namespace DDS_Trainer.Forms
         /// <param name="e"></param>
         private void Goback(object sender, EventArgs e)
         {
-            this.cntrlRBGame1.StopTimeTimer();
+            this.cntrlIAGame1.StopTimeTimer();
             this.Close();
         }
         /// <summary>
-        /// Event that is triggered when the game on RBGame is over.
+        /// Event that is triggered when the game on IAGame is over.
         /// Updates the leaderboard if called.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void RBGame_GameOver(object sender, EventArgs e)
+        private void IAGame_GameOver(object sender, EventArgs e)
         {
             UpdateLeaderboard();
         }
@@ -90,8 +90,8 @@ namespace DDS_Trainer.Forms
         /// </summary>
         public void UpdateLeaderboard()
         {
-            this.MainMenu.LbDisplayTxtName = "RBScoreDisplay.txt";
-            this.MainMenu.UpdateCntrlLeaderboard("Replacing Books");
+            this.MainMenu.LbDisplayTxtName = "IAScoreDisplay.txt";
+            this.MainMenu.UpdateCntrlLeaderboard("Identifying Areas");
         }
         #endregion
     }

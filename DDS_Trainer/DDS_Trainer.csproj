@@ -55,6 +55,12 @@
     <Compile Include="Components\CntrlHighScore.Designer.cs">
       <DependentUpon>CntrlHighScore.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\CntrlIAGame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\CntrlIAGame.Designer.cs">
+      <DependentUpon>CntrlIAGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\CntrlLeaderboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -79,6 +85,12 @@
     <Compile Include="Forms\FrmHighScore.Designer.cs">
       <DependentUpon>FrmHighScore.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmIAGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmIAGame.Designer.cs">
+      <DependentUpon>FrmIAGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,8 +105,28 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Images\leftArrow.png" />
+    <None Include="Images\rightArrow.png" />
+    <None Include="Images\pixArrow.png" />
+    <None Include="Images\pixGreenMark.png" />
+    <None Include="Images\pixPurpleMark.png" />
+    <None Include="Images\pixBlueMark.png" />
+    <None Include="Images\pixRedMark.png" />
+    <None Include="Images\pixMarkerRed.png" />
+    <None Include="Images\pixMarkerPurple.png" />
+    <None Include="Images\pixMarkerGreen.png" />
+    <None Include="Images\pixMarkerBlue.png" />
+    <None Include="Images\pixClipMarkersBlue.png" />
+    <None Include="Images\pixClipMarkerRed.png" />
+    <None Include="Images\pixClipMarkerPurple.png" />
+    <None Include="Images\pixClipMarkerGreen.png" />
+    <None Include="Images\pixMarker.png" />
+    <None Include="Images\IAGameBackground.png" />
     <EmbeddedResource Include="Components\CntrlHighScore.resx">
       <DependentUpon>CntrlHighScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\CntrlIAGame.resx">
+      <DependentUpon>CntrlIAGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\CntrlLeaderboard.resx">
       <DependentUpon>CntrlLeaderboard.cs</DependentUpon>
@@ -107,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmHighScore.resx">
       <DependentUpon>FrmHighScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmIAGame.resx">
+      <DependentUpon>FrmIAGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMainMenu.resx">
       <DependentUpon>FrmMainMenu.cs</DependentUpon>

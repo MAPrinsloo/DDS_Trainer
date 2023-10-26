@@ -17,7 +17,14 @@ namespace DDS_Trainer.Components
 {
     public partial class CntrlLeaderboard : UserControl
     {
+        //Filemanager being initialised
         FileManager fileManager = new FileManager();
+        //name of the text file holding the display info for Replacing Books
+        private string RBGameDisplayFile = "RBScoreDisplay.txt";
+        //name of the text file holding the display info for Identifying Areas
+        private string IAGameDisplayFile = "IAScoreDisplay.txt";
+        //string for the name of the game being displayed in the leaderboard
+        private string CurrentGame = "";
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
         /// Default constructor
@@ -27,6 +34,29 @@ namespace DDS_Trainer.Components
             InitializeComponent();
         }
         //-----------------------------------------------------------------------------------------------//
+        #region Form Operations
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Next button is clicked, arrow right
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            NextLeaderboard();
+        }
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Previous button is clicked, arrow left
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            PreviousLeaderboard();
+        }
+        #endregion
+        //-----------------------------------------------------------------------------------------------//
         #region Methods
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
@@ -34,19 +64,53 @@ namespace DDS_Trainer.Components
         /// Source file is what will be read from when updating the leaderboard.
         /// </summary>
         /// <param name="SourceFileName"></param>
-        public void UpdateLeaderBoard(string SourceFileName) 
+        public void UpdateLeaderBoard(string SourceFileName, string GameName) 
         {
             rtLeaderboard.Clear();
             //Sets template
+            txtLeaderboardTitle.Text = GameName + "\r\n Leaderboard";
+            this.CurrentGame = GameName;
             rtLeaderboard.Text = "RANK\tSCORE\tNAME\r\n";
             //Uses filemanager to read from the text file.
-            fileManager.ReadFromFile(FileName: SourceFileName);
-            for (int counter = 0; counter < fileManager.ReadFromFile(FileName: SourceFileName).Count; counter++)
+            this.fileManager.ReadFromFile(FileName: SourceFileName);
+            for (int counter = 0; counter < this.fileManager.ReadFromFile(FileName: SourceFileName).Count; counter++)
             {
-                rtLeaderboard.Text += fileManager.ReadFromFile(FileName: SourceFileName)[counter] + "\r\n";
+                rtLeaderboard.Text += this.fileManager.ReadFromFile(FileName: SourceFileName)[counter] + "\r\n";
             }
         }
-       #endregion
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Switch with logic on going to next games Leaderboard 
+        /// </summary>
+        private void NextLeaderboard() 
+        {
+            switch (this.CurrentGame)
+            {
+                case "Replacing Books":
+                    UpdateLeaderBoard(this.IAGameDisplayFile, "Identifying Areas");
+                    break;
+                case "Identifying Areas":
+                    UpdateLeaderBoard(this.RBGameDisplayFile, "Replacing Books");
+                    break;
+            }
+        }
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Switch with logic on going to previous games Leaderboard 
+        /// </summary>
+        private void PreviousLeaderboard() 
+        {
+            switch (this.CurrentGame)
+            {
+                case "Replacing Books":
+                    UpdateLeaderBoard(this.IAGameDisplayFile, "Identifying Areas");
+                    break;
+                case "Identifying Areas":
+                    UpdateLeaderBoard(this.RBGameDisplayFile, "Replacing Books");
+                    break;
+            }
+        }
+        #endregion
     }
 }
 //===============================================================================================//

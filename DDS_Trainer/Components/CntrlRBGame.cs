@@ -90,7 +90,7 @@ namespace DDS_Trainer.Components
         {
             InitializeComponent();
             InitializeControl();
-        }
+        }       
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
         /// Parameterised constructor
