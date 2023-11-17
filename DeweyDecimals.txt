@@ -1,0 +1,210 @@
+000 General knowledge
+	010 Bibliography
+		011 Bibliographies and catalogs
+		012 Bibliographies and catalogs of individuals
+		014 Of anonymous & pseudonymous works 
+		015 Of works from specific places
+	020 Library and information sciences
+		021 Relationships of libraries and archives
+		022 Administration of physical plant
+		023 Personnel management
+		025 Operations of libraries and archives
+	030 General encyclopedic works
+		031 General encyclopedic works in American English
+		032 General encyclopedic works in English
+		033 Encyclopedias in other Germanic languages 
+		034 Encyclopedias in French, Occitan & Catalan	
+	050 General serial publications
+		051 General serial publications in American English
+		052 General serial publications in English 
+		053 Serials in other Germanic languages 
+		054 Serials in French, Occitan & Catalan
+100 Philosophy & psychology
+	110 Metaphysics
+		111 Ontology
+		113 Cosmology (Philosophy of nature)
+		114 Space
+		115 Time
+	120 Epistemology, causation, humankind
+		121 Epistemology (Theory of knowledge)
+		122 Causation
+		123 Determinism and indeterminism
+		124 Teleology
+	130 Parapsychology and occultism
+		131 Parapsychological and occult methods
+		133 Specific topics in parapsychology & occultism 
+		135 Dreams and mysteries
+		137 Divinatory graphology
+	140 Specific philosophical schools
+		141 Idealism and related systems
+		142 Critical philosophy
+		143 Bergsonism and intuitionism
+		144 Humanism and related systems
+200 Religion
+	210 Philosophy and theory of religion	
+		211 Concepts of God
+		212 Existence, knowability & attributes of God
+		213 Creation
+		214 Theodicy
+	220 Bible
+		221 Old Testament (Tanakh)
+		222 Historical books of Old Testament
+		223 Poetic books of Old Testament
+		224 Prophetic books of Old Testament
+	230 Christianity
+		231 God
+		232 Jesus Christ and his family
+		233 Humankind
+		234 Salvation and grace
+	270 History, geographic treatment, biography
+		271 Religious orders in church history
+		272 Persecutions in general church history
+		273 Doctrinal controversies & heresies
+		274 History of Christianity in Europe
+300 Social sciences	
+	310 Collections of general statistics
+		314 General statistics of Europe
+		315 General statistics of Asia
+		316 General statistics of Africa
+		317 General statistics of North America
+	350 Public administration and military science
+		351 Public administration
+		352 General considerations of public administration
+		353 Specific fields of public administration
+		354 Administration of economy & environment
+	370 Education
+		371 Schools and their activities; special education
+		372 Primary education (Elementary education)
+		373 Secondary education
+		374 Adult education
+	390 Customs, etiquette, folklore
+		391 Costume and personal appearance
+		392 Customs of life cycle and domestic life
+		393 Death customs
+		394 General customs
+400 Language
+	420 English & Old English (Anglo-Saxon)
+		421 Writing system, phonology, phonetics
+		422 Etymology of standard English
+		423 Dictionaries of standard English
+		425 Grammar of standard English
+	430 German and related languages
+		431 Writing system, phonology, phonetics
+		432 Etymology of standard German
+		433 Dictionaries of standard German
+		435 Grammar of standard German
+	470 Latin and related Italic languages
+		471 Writing system, phonology, phonetics
+		472 Etymology of classical Latin
+		473 Dictionaries of classical Latin
+		475 Grammar of classical Latin
+	490 Other languages
+		495 Languages of east and southeast Asia
+		496 African languages
+		497 North American native languages
+		498 South American native languages
+500 Science
+	530 Physics
+		531 Classical mechanics
+		532 Fluid mechanics
+		533 Pneumatics (Gas mechanics)
+		534 Sound and related vibrations
+	560 Paleontology
+		561 Paleobotany; fossil microorganisms
+		562 Fossil invertebrates
+		563 Fossil marine & seashore invertebrates
+		564 Fossil Mollusca & Molluscoidea
+	570 Biology
+		576 Genetics and evolution
+		577 Ecology
+		578 Natural history of organisms
+		579 Microorganisms, fungi & algae
+	590 Animals
+		591 Specific topics in natural history of animals
+		592 Invertebrates
+		593 Marine & seashore invertebrates
+		594 Mollusca and Molluscoidea
+600 Technology
+	610 Medicine and health
+		611 Human anatomy, cytology, histology
+		612 Human physiology
+		613 Personal health & safety
+		614 Forensic medicine; incidence of disease
+	620 Engineering and allied operations
+		621 Applied physics
+		622 Mining and related operations
+		623 Military and nautical engineering
+		624 Civil engineering
+	670 Manufacturing
+		671 Metalworking & primary metal products
+		672 Iron, steel, other iron alloys
+		673 Nonferrous metals
+		674 Lumber processing, wood products, cork
+	680 Manufacture of products for specific uses
+		681 Precision instruments and other devices
+		682 Small forge work (Blacksmithing)
+		683 Hardware & household appliances
+		684 Furnishings and home workshops
+700 Art & recreation
+	720 Architecture
+		721 Architectural materials and structure
+		722 Architecture from earliest times to ca. 300
+		723 Architecture from ca. 300 to 1399
+		724 Architecture from 1400
+	750 Painting and paintings
+		751 Techniques, equipment, materials & forms
+		752 Color
+		753 Symbolism, allegory, mythology, legend
+		754 Genre paintings
+	770 Photography, computer art, cinematography
+		771 Techniques, equipment & materials
+		772 Metallic salt processes
+		773 Pigment processes of printing
+		774 Holography
+	790 Recreational and performing arts
+		791 Public performances
+		792 Stage presentations
+		793 Indoor games and amusements
+		794 Indoor games of skill
+800 Literature
+	820 English & Old English literatures
+		821 English poetry
+		822 English drama
+		823 English fiction
+		824 English essays
+	840 French and related literatures
+		841 French poetry
+		842 French drama
+		843 French fiction
+		844 French essays
+	870 Latin & related Italic literatures
+		871 Latin poetry
+		872 Latin dramatic poetry and drama
+		873 Latin epic poetry and fiction
+		874 Latin lyric poetry
+	890 Literatures of other languages
+		891 East Indo-European and Celtic literatures
+		892 Afro-Asiatic literatures
+		893 Non-Semitic Afro-Asiatic literatures
+		894 Altaic, Uralic, Hyperborean & Dravidian
+900 History and geography
+	910 Geography and travel
+		911 Historical geography
+		912 Maps and plans of surface of earth
+		913 Geography of and travel in ancient world
+		914 Geography of and travel in Europe
+	930 History of ancient world to ca. 499
+		931 China to 420
+		932 Egypt to 640
+		933 Palestine to 70
+		934 India to 647
+	960 History of Africa
+		966 West Africa and offshore islands
+		967 Central Africa and offshore islands
+		968 South Africa & southern Africa
+		969 South Indian Ocean islands
+	970 History of North America
+		971 Canada
+		972 Mexico, Central America, West Indies
+		973 United States
+		974 Northeastern United States

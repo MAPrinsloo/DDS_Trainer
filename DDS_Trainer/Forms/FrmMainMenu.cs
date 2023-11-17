@@ -64,6 +64,13 @@ namespace DDS_Trainer.Forms
             frmIdentifyingAreasGame.ShowDialog();
         }
         //-----------------------------------------------------------------------------------------------//
+        private void btnFindingCallNumb_Click(object sender, EventArgs e)
+        {
+            //We pass this form into the constructor so that FrmIAGame can have access to updating the leaderboard.
+            FrmFCNGame frmIdentifyingAreasGame = new FrmFCNGame(this);
+            frmIdentifyingAreasGame.ShowDialog();
+        }
+        //-----------------------------------------------------------------------------------------------//
         /// <summary>
         /// Queries user to if they would like to close the application
         /// Displays FrmClose on a stack using ShowDialog()
@@ -96,8 +103,6 @@ namespace DDS_Trainer.Forms
             Application.Exit();
         }
         #endregion
-
-       
     }
 }
 //===============================================================================================//

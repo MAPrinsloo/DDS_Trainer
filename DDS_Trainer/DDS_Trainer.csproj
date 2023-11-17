@@ -49,6 +49,14 @@
     <Compile Include="Classes\Book.cs" />
     <Compile Include="Classes\LeaderboardPLayers.cs" />
     <Compile Include="Classes\SubmissionPoint.cs" />
+    <Compile Include="Classes\TreeManager.cs" />
+    <Compile Include="Classes\TreeNode.cs" />
+    <Compile Include="Components\CntrlFCNGame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\CntrlFCNGame.Designer.cs">
+      <DependentUpon>CntrlFCNGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\CntrlHighScore.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -78,6 +86,12 @@
     </Compile>
     <Compile Include="Forms\FrmClose.Designer.cs">
       <DependentUpon>FrmClose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmFCNGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFCNGame.Designer.cs">
+      <DependentUpon>FrmFCNGame.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmHighScore.cs">
       <SubType>Form</SubType>
@@ -122,6 +136,9 @@
     <None Include="Images\pixClipMarkerGreen.png" />
     <None Include="Images\pixMarker.png" />
     <None Include="Images\IAGameBackground.png" />
+    <EmbeddedResource Include="Components\CntrlFCNGame.resx">
+      <DependentUpon>CntrlFCNGame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\CntrlHighScore.resx">
       <DependentUpon>CntrlHighScore.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmClose.resx">
       <DependentUpon>FrmClose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmFCNGame.resx">
+      <DependentUpon>FrmFCNGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmHighScore.resx">
       <DependentUpon>FrmHighScore.cs</DependentUpon>

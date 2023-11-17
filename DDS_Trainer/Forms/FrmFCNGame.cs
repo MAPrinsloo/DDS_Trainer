@@ -1,7 +1,4 @@
-﻿// Author: Matthew Alexander Prinsloo
-// Student Number: ST10081850
-// Subject code: PROG7312
-using DDS_Trainer.Components;
+﻿using DDS_Trainer.Components;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +11,7 @@ using System.Windows.Forms;
 
 namespace DDS_Trainer.Forms
 {
-    public partial class FrmIAGame : Form
+    public partial class FrmFCNGame : Form
     {
         //Create an object of FrmMainMenu
         private FrmMainMenu MainMenu;
@@ -27,59 +24,37 @@ namespace DDS_Trainer.Forms
         /// Paramaterised Constructor, we pass 
         /// </summary>
         /// <param name="mainMenu"></param>
-        public FrmIAGame(FrmMainMenu mainMenu)
+        public FrmFCNGame(FrmMainMenu mainMenu)
         {
             InitializeComponent();
             this.MainMenu = mainMenu;
             //Subscribed to event handler that is triggered by CntrlIAGame.
-            cntrlIAGame1.GameOver += IAGame_GameOver;
+            //cntrlFCNGame1.GameOver += FCNGame_GameOver;
             //Subscribed to event handler that is triggered by frmClose.
             this.frmClose.GoBack += Goback;
 
         }
         //-----------------------------------------------------------------------------------------------//
-        #region Form Operations
-        //-----------------------------------------------------------------------------------------------//
         /// <summary>
-        /// Back button is clicked
+        /// Default constructor
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnBack_Click(object sender, EventArgs e)
+        public FrmFCNGame()
         {
-            Back();
+            InitializeComponent();
         }
+        //-----------------------------------------------------------------------------------------------//
+        #region Form Operations
         #endregion
         //-----------------------------------------------------------------------------------------------//
         #region Methods
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
-        /// This method opens fromClose on a stack.
-        /// </summary>
-        public void Back()
-        {
-            this.frmClose.ShowDialog();
-        }
-        //-----------------------------------------------------------------------------------------------//
-        /// <summary>
-        /// Stops the timer on the user control and closes this form
-        /// When the event is triggered. Is triggered by frmClose.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Goback(object sender, EventArgs e)
-        {
-            this.cntrlIAGame1.StopTimeTimer();
-            this.Close();
-        }        
-        //-----------------------------------------------------------------------------------------------//
-        /// <summary>
-        /// Event that is triggered when the game on IAGame is over.
+        /// Event that is triggered when the game on FCNGame is over.
         /// Updates the leaderboard if called.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void IAGame_GameOver(object sender, EventArgs e)
+        private void FCNGame_GameOver(object sender, EventArgs e)
         {
             UpdateLeaderboard();
         }
@@ -93,6 +68,18 @@ namespace DDS_Trainer.Forms
         {
             this.MainMenu.LbDisplayTxtName = "IAScoreDisplay.txt";
             this.MainMenu.UpdateCntrlLeaderboard("Identifying Areas");
+        }
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Stops the timer on the user control and closes this form
+        /// When the event is triggered. Is triggered by frmClose.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Goback(object sender, EventArgs e)
+        {
+            //this.cntrlFCNGame1.StopTimeTimer();
+            this.Close();
         }
         #endregion
     }

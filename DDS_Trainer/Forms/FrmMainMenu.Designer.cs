@@ -97,6 +97,7 @@
             this.btnFindingCallNumb.Text = "Finding-Call-Numbers.exe";
             this.btnFindingCallNumb.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnFindingCallNumb.UseVisualStyleBackColor = false;
+            this.btnFindingCallNumb.Click += new System.EventHandler(this.btnFindingCallNumb_Click);
             // 
             // btnClose
             // 
