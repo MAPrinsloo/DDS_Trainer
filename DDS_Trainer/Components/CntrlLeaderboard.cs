@@ -23,6 +23,8 @@ namespace DDS_Trainer.Components
         private string RBGameDisplayFile = "RBScoreDisplay.txt";
         //name of the text file holding the display info for Identifying Areas
         private string IAGameDisplayFile = "IAScoreDisplay.txt";
+        //name of the text file holding the display info for Finding Call Numbers
+        private string FCNGameDisplayFile = "FCNScoreDisplay.txt";
         //string for the name of the game being displayed in the leaderboard
         private string CurrentGame = "";
         //-----------------------------------------------------------------------------------------------//
@@ -90,6 +92,9 @@ namespace DDS_Trainer.Components
                     UpdateLeaderBoard(this.IAGameDisplayFile, "Identifying Areas");
                     break;
                 case "Identifying Areas":
+                    UpdateLeaderBoard(this.FCNGameDisplayFile, "Finding Call Numbers");
+                    break;
+                case "Finding Call Numbers":
                     UpdateLeaderBoard(this.RBGameDisplayFile, "Replacing Books");
                     break;
             }
@@ -103,10 +108,13 @@ namespace DDS_Trainer.Components
             switch (this.CurrentGame)
             {
                 case "Replacing Books":
-                    UpdateLeaderBoard(this.IAGameDisplayFile, "Identifying Areas");
+                    UpdateLeaderBoard(this.FCNGameDisplayFile, "Finding Call Numbers"); 
                     break;
                 case "Identifying Areas":
                     UpdateLeaderBoard(this.RBGameDisplayFile, "Replacing Books");
+                    break;
+                case "Finding Call Numbers":
+                    UpdateLeaderBoard(this.IAGameDisplayFile, "Identifying Areas");
                     break;
             }
         }

@@ -72,6 +72,7 @@ namespace DDS_Trainer.Forms
             this.cntrlRBGame1.StopTimeTimer();
             this.Close();
         }
+        //-----------------------------------------------------------------------------------------------//
         /// <summary>
         /// Event that is triggered when the game on RBGame is over.
         /// Updates the leaderboard if called.

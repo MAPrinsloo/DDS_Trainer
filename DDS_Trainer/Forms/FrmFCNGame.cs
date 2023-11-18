@@ -29,7 +29,7 @@ namespace DDS_Trainer.Forms
             InitializeComponent();
             this.MainMenu = mainMenu;
             //Subscribed to event handler that is triggered by CntrlIAGame.
-            //cntrlFCNGame1.GameOver += FCNGame_GameOver;
+            cntrlFCNGame1.GameOver += FCNGame_GameOver;
             //Subscribed to event handler that is triggered by frmClose.
             this.frmClose.GoBack += Goback;
 
@@ -44,6 +44,10 @@ namespace DDS_Trainer.Forms
         }
         //-----------------------------------------------------------------------------------------------//
         #region Form Operations
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Back();
+        }
         #endregion
         //-----------------------------------------------------------------------------------------------//
         #region Methods
@@ -66,8 +70,8 @@ namespace DDS_Trainer.Forms
         /// </summary>
         public void UpdateLeaderboard()
         {
-            this.MainMenu.LbDisplayTxtName = "IAScoreDisplay.txt";
-            this.MainMenu.UpdateCntrlLeaderboard("Identifying Areas");
+            this.MainMenu.LbDisplayTxtName = "FCNScoreDisplay.txt";
+            this.MainMenu.UpdateCntrlLeaderboard("Finding Call Numbers");
         }
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
@@ -78,10 +82,31 @@ namespace DDS_Trainer.Forms
         /// <param name="e"></param>
         private void Goback(object sender, EventArgs e)
         {
-            //this.cntrlFCNGame1.StopTimeTimer();
+            this.cntrlFCNGame1.StopTimeTimer();
             this.Close();
         }
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// This method opens fromClose on a stack.
+        /// </summary>
+        public void Back()
+        {
+            frmClose.ShowDialog();
+        }
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Event that is triggered when the game on RBGame is over.
+        /// Updates the leaderboard if called.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RBGame_GameOver(object sender, EventArgs e)
+        {
+            UpdateLeaderboard();
+        }
         #endregion
+
+        
     }
 }
 //===============================================================================================//
