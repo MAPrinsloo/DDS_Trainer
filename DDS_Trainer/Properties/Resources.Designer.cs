@@ -163,6 +163,16 @@ namespace DDS_Trainer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CloseButtonCrop {
+            get {
+                object obj = ResourceManager.GetObject("CloseButtonCrop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ClosedBookBlue {
             get {
                 object obj = ResourceManager.GetObject("ClosedBookBlue", resourceCulture);
@@ -196,6 +206,26 @@ namespace DDS_Trainer.Properties {
         internal static System.Drawing.Bitmap FCNActivityIcon {
             get {
                 object obj = ResourceManager.GetObject("FCNActivityIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap finish {
+            get {
+                object obj = ResourceManager.GetObject("finish", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FNCGameBackground {
+            get {
+                object obj = ResourceManager.GetObject("FNCGameBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -506,6 +536,16 @@ namespace DDS_Trainer.Properties {
         internal static System.Drawing.Bitmap SaveButton {
             get {
                 object obj = ResourceManager.GetObject("SaveButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tutorial_icon2 {
+            get {
+                object obj = ResourceManager.GetObject("tutorial_icon2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

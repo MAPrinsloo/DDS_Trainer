@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,9 +23,11 @@ namespace DDS_Trainer.Components
         private TreeNode TreeRoot;
         private TreeNode QuestionsRoot;
         private List<Label> QuestionLabelsList = new List<Label>();
+        private List<string> QuestionLabelsDecimal = new List<string>();
         private List<TreeNode> AnswerList = new List<TreeNode>();
         private Random random = new Random();
         private int CurrentQuestionLevel = 3;
+
 
         //Used for counting down from 2 minutes
         private TimeSpan CountdownTime = TimeSpan.FromMinutes(2);
@@ -55,7 +58,8 @@ namespace DDS_Trainer.Components
 
         //Filemanager called from the class library. handles txt files
         private DDSLibrary.FileManager fileManager = new DDSLibrary.FileManager();
-        
+        private bool FlashColor = false;
+
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
         /// Default constructor
@@ -71,7 +75,7 @@ namespace DDS_Trainer.Components
         //-----------------------------------------------------------------------------------------------//
         private void lblQuestoin1_Click(object sender, EventArgs e)
         {
-            if (CheckAnswerList(lblQuestoin1.Text) == false)
+            if (CheckAnswerList(QuestionLabelsDecimal[0]) == false)
             {
                 ResetGame();
             }
@@ -79,7 +83,7 @@ namespace DDS_Trainer.Components
         //-----------------------------------------------------------------------------------------------//
         private void lblQuestoin2_Click(object sender, EventArgs e)
         {
-            if (CheckAnswerList(lblQuestoin2.Text) == false)
+            if (CheckAnswerList(QuestionLabelsDecimal[1]) == false)
             {
                 ResetGame();
             }
@@ -87,7 +91,7 @@ namespace DDS_Trainer.Components
         //-----------------------------------------------------------------------------------------------//      
         private void lblQuestoin3_Click(object sender, EventArgs e)
         {
-            if (CheckAnswerList(lblQuestoin3.Text) == false)
+            if (CheckAnswerList(QuestionLabelsDecimal[2]) == false)
             {
                 ResetGame();
             }
@@ -95,7 +99,7 @@ namespace DDS_Trainer.Components
         //-----------------------------------------------------------------------------------------------//
         private void lblQuestoin4_Click(object sender, EventArgs e)
         {
-            if (CheckAnswerList(lblQuestoin4.Text) == false)
+            if (CheckAnswerList(QuestionLabelsDecimal[3]) == false)
             {
                 ResetGame();
             }
@@ -157,6 +161,7 @@ namespace DDS_Trainer.Components
         private void ResetGame() 
         {
             this.QuestionsRoot = treeManager.GenerateQuestions(this.TreeRoot, 4);
+            this.QuestionLabelsDecimal.Clear();
             this.CurrentQuestionLevel = 3;
             this.AnswerList.Clear();
             AssignQuestions(this.QuestionsRoot, 2, null);
@@ -217,6 +222,7 @@ namespace DDS_Trainer.Components
         private void AssignQuestions(TreeNode root, int targetDepth, string queriedDecimal)
         {
             Queue<(TreeNode node, TreeNode parent)> queue = new Queue<(TreeNode, TreeNode)>();
+            this.QuestionLabelsDecimal.Clear();
             queue.Enqueue((root, null)); // Initially, parent is null for the root node
             int currentDepth = 0;
             int questionLabelCount = 0;
@@ -235,7 +241,9 @@ namespace DDS_Trainer.Components
                         string parentDewey = parent != null ? parent.GetDeweyDecimal() : "parent decimal";
                         if ((queriedDecimal == null || queriedDecimal == parentDewey) && questionLabelCount < QuestionLabelsList.Count)
                         {
-                            QuestionLabelsList[questionLabelCount].Text = $"{node.GetDeweyDecimal()} {node.GetDescription()}";
+                            this.QuestionLabelsList[questionLabelCount].Text = $"{node.GetDeweyDecimal()} {node.GetDescription()}";
+                            this.QuestionLabelsDecimal.Add($"{node.GetDeweyDecimal()}");
+
                             questionLabelCount++;
                         }
                     }
@@ -261,7 +269,8 @@ namespace DDS_Trainer.Components
                 optionsAtPreviousDepth = ChooseRandomOption(optionsAtPreviousDepth, currentDepth);
                 currentDepth++;
             }
-            lblQuestionHeader.Text = this.AnswerList[this.AnswerList.Count - 1].GetDeweyDecimal() + this.AnswerList[this.AnswerList.Count - 1].GetDescription();
+            lblQuestionHeader.Text = "Find the call number for: \r\n" +
+                this.AnswerList[this.AnswerList.Count - 1].GetDeweyDecimal() + " " + this.AnswerList[this.AnswerList.Count - 1].GetDescription();
         }
         //-----------------------------------------------------------------------------------------------//
         //
@@ -304,13 +313,30 @@ namespace DDS_Trainer.Components
             {
                 ResetGame();
                 this.Score += 100;
+                FlashTimer.Start();
+                lblQuestionHeader.ForeColor = Color.LawnGreen;
                 this.AddedScore = true;
                 lblScore.Text = "SCORE: " + this.Score;
             }
-            else if (answer == true) 
+            else if (answer == true)
             {
                 AssignQuestions(this.QuestionsRoot, this.CurrentQuestionLevel, DecimalChosen);
+                FlashTimer.Start();
+                for (int counter = 0; counter < QuestionLabelsList.Count; counter++)
+                {
+                    QuestionLabelsList[counter].ForeColor = Color.LawnGreen;
+                }
                 this.CurrentQuestionLevel++;
+            }
+            else 
+            {
+                FlashTimer.Start();
+                for (int counter = 0; counter < QuestionLabelsList.Count; counter++)
+                {
+                    QuestionLabelsList[counter].ForeColor = Color.Red;
+                }
+                lblQuestionHeader.ForeColor = Color.Red;
+
             }
             return answer;
         //-----------------------------------------------------------------------------------------------//
@@ -347,6 +373,7 @@ namespace DDS_Trainer.Components
             {
                 this.QuestionLabelsList[count].Visible = !QuestionLabelsList[count].Visible;
             }
+            lblQuestionHeader.Visible = !lblQuestionHeader.Visible;
             btnPlay.Visible = !btnPlay.Visible;
         }
         //-----------------------------------------------------------------------------------------------//
@@ -472,6 +499,25 @@ namespace DDS_Trainer.Components
         private void btnPlay_Click(object sender, EventArgs e)
         {
             StartGame();
+        }
+
+  
+
+        private void cntrlFlashTimerEvent(object sender, EventArgs e)
+        {
+            if (FlashColor == true)
+            {
+                FlashColor = false;
+            }
+            else if ((lblQuestionHeader.ForeColor != Color.White || lblQuestoin1.ForeColor != Color.White) && FlashColor == false)
+            {
+                lblQuestionHeader.ForeColor = Color.White;
+                for (int counter = 0; counter < QuestionLabelsList.Count; counter++)
+                {
+                    QuestionLabelsList[counter].ForeColor = Color.White;
+                }
+                FlashTimer.Stop();
+            }
         }
     }
 }

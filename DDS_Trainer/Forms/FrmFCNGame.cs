@@ -93,6 +93,17 @@ namespace DDS_Trainer.Forms
         {
             frmClose.ShowDialog();
         }
+        private void LoadTutorial() 
+        {
+            List<Image> images = new List<Image>();
+            for (int i = 0; i < ilTutorial.Images.Count; i++)
+            {
+                images.Add(ilTutorial.Images[i]);
+            }
+            FrmTutorial tutorial = new FrmTutorial();
+            tutorial.LoadImages(images);
+            tutorial.Show();
+        }
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
         /// Event that is triggered when the game on RBGame is over.
@@ -104,9 +115,13 @@ namespace DDS_Trainer.Forms
         {
             UpdateLeaderboard();
         }
+
         #endregion
 
-        
+        private void btnTutorial_Click(object sender, EventArgs e)
+        {
+            LoadTutorial();
+        }
     }
 }
 //===============================================================================================//

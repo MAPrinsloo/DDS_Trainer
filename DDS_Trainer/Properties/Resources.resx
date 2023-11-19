@@ -124,6 +124,9 @@
   <data name="IAGameBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\IAGameBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="leftArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\leftArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="NoButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\NoButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,9 +148,6 @@
   <data name="CloseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\CloseButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="back-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\back-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pixGreenMark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\pixGreenMark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,11 +157,20 @@
   <data name="2048px-Back_Arrow.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\2048px-Back_Arrow.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pixBlueMark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\pixBlueMark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="back-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\back-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="output-onlinepngtools (15)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\output-onlinepngtools (15).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloseButtonCrop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\CloseButtonCrop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PixWrinkledPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\PixWrinkledPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pixMarkerBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\pixMarkerBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,8 +190,8 @@
   <data name="pixMarkerPurple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\pixMarkerPurple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pixBlueMark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\pixBlueMark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="back-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\back-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pixMarkerRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\pixMarkerRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -204,6 +213,9 @@
   </data>
   <data name="output-onlinepngtools (16)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\output-onlinepngtools (16).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FNCGameBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FNCGameBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rightArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\rightArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,8 +247,8 @@
   <data name="CloseButton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\CloseButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CloseApp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\CloseApp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tutorial_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\tutorial_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="YellowWhiteStripedBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\YellowWhiteStripedBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,13 +259,13 @@
   <data name="CloseButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\CloseButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PixWrinkledPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\PixWrinkledPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CloseApp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\CloseApp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pixRedMark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\pixRedMark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="leftArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\leftArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="finish" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\finish.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

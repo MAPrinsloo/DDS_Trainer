@@ -81,6 +81,12 @@
     <Compile Include="Components\CntrlRBGame.Designer.cs">
       <DependentUpon>CntrlRBGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\CntrlTutorial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\CntrlTutorial.Designer.cs">
+      <DependentUpon>CntrlTutorial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmClose.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,8 +123,19 @@
     <Compile Include="Forms\FrmRBGame.Designer.cs">
       <DependentUpon>FrmRBGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmTutorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTutorial.Designer.cs">
+      <DependentUpon>FrmTutorial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Images\finish.png" />
+    <None Include="Images\CloseButtonCrop.png" />
+    <None Include="Images\tutorial_icon.png" />
+    <None Include="Resources\tutorial_icon.png" />
+    <None Include="Resources\FNCGameBackground.png" />
     <None Include="Images\leftArrow.png" />
     <None Include="Images\rightArrow.png" />
     <None Include="Images\pixArrow.png" />
@@ -151,6 +168,9 @@
     <EmbeddedResource Include="Components\CntrlRBGame.resx">
       <DependentUpon>CntrlRBGame.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\CntrlTutorial.resx">
+      <DependentUpon>CntrlTutorial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmClose.resx">
       <DependentUpon>FrmClose.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmRBGame.resx">
       <DependentUpon>FrmRBGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTutorial.resx">
+      <DependentUpon>FrmTutorial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
