@@ -68,7 +68,6 @@ namespace DDS_Trainer.Components
         {
             InitializeComponent();
             InitialiseControl();
-            testing();
         }
         //-----------------------------------------------------------------------------------------------//
         #region Form Operations
@@ -136,14 +135,41 @@ namespace DDS_Trainer.Components
                 this.AddedScore = false;
             }
         }
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            StartGame();
+        }
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cntrlFlashTimerEvent(object sender, EventArgs e)
+        {
+            if (FlashColor == true)
+            {
+                FlashColor = false;
+            }
+            else if ((lblQuestionHeader.ForeColor != Color.White || lblQuestoin1.ForeColor != Color.White) && FlashColor == false)
+            {
+                lblQuestionHeader.ForeColor = Color.White;
+                for (int counter = 0; counter < QuestionLabelsList.Count; counter++)
+                {
+                    QuestionLabelsList[counter].ForeColor = Color.White;
+                }
+                FlashTimer.Stop();
+            }
+        }
         #endregion
         //-----------------------------------------------------------------------------------------------//
         #region Methods
-        //-----------------------------------------------------------------------------------------------//
-        private void testing()
-        {
-            treeManager.GenerateQuestions(TreeRoot, 4);
-        }
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
         /// Called when the user starts the game.
@@ -170,6 +196,7 @@ namespace DDS_Trainer.Components
         //-----------------------------------------------------------------------------------------------//
         private void InitialiseControl() 
         {
+            UpdateLabel();
             //Load from text file into tree
             this.TreeRoot = treeManager.BuildTreeFromFile("DeweyDecimals.txt");
             //Initialise Questions root
@@ -270,7 +297,8 @@ namespace DDS_Trainer.Components
                 currentDepth++;
             }
             lblQuestionHeader.Text = "Find the call number for: \r\n" +
-                this.AnswerList[this.AnswerList.Count - 1].GetDeweyDecimal() + " " + this.AnswerList[this.AnswerList.Count - 1].GetDescription();
+                this.AnswerList[this.AnswerList.Count - 1].GetDescription();
+            MessageBox.Show(this.AnswerList[this.AnswerList.Count - 1].GetDeweyDecimal());
         }
         //-----------------------------------------------------------------------------------------------//
         //
@@ -495,29 +523,5 @@ namespace DDS_Trainer.Components
             UpdateLeaderboard();
         }
         #endregion
-
-        private void btnPlay_Click(object sender, EventArgs e)
-        {
-            StartGame();
-        }
-
-  
-
-        private void cntrlFlashTimerEvent(object sender, EventArgs e)
-        {
-            if (FlashColor == true)
-            {
-                FlashColor = false;
-            }
-            else if ((lblQuestionHeader.ForeColor != Color.White || lblQuestoin1.ForeColor != Color.White) && FlashColor == false)
-            {
-                lblQuestionHeader.ForeColor = Color.White;
-                for (int counter = 0; counter < QuestionLabelsList.Count; counter++)
-                {
-                    QuestionLabelsList[counter].ForeColor = Color.White;
-                }
-                FlashTimer.Stop();
-            }
-        }
     }
 }

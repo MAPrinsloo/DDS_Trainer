@@ -213,6 +213,66 @@ namespace DDS_Trainer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FCNdepth1 {
+            get {
+                object obj = ResourceManager.GetObject("FCNdepth1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FCNdepth2 {
+            get {
+                object obj = ResourceManager.GetObject("FCNdepth2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FCNdepth3 {
+            get {
+                object obj = ResourceManager.GetObject("FCNdepth3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FCNoptionRegen {
+            get {
+                object obj = ResourceManager.GetObject("FCNoptionRegen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FCNscoreAdded {
+            get {
+                object obj = ResourceManager.GetObject("FCNscoreAdded", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FCNTutPlay {
+            get {
+                object obj = ResourceManager.GetObject("FCNTutPlay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap finish {
             get {
                 object obj = ResourceManager.GetObject("finish", resourceCulture);
@@ -243,9 +303,79 @@ namespace DDS_Trainer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IAApplyColor {
+            get {
+                object obj = ResourceManager.GetObject("IAApplyColor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IAColorSelect {
+            get {
+                object obj = ResourceManager.GetObject("IAColorSelect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IAGameBackground {
             get {
                 object obj = ResourceManager.GetObject("IAGameBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IAMatchingQtoA {
+            get {
+                object obj = ResourceManager.GetObject("IAMatchingQtoA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IAMatchingReassign {
+            get {
+                object obj = ResourceManager.GetObject("IAMatchingReassign", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IANewPrompts {
+            get {
+                object obj = ResourceManager.GetObject("IANewPrompts", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IAScoreTimeAdd {
+            get {
+                object obj = ResourceManager.GetObject("IAScoreTimeAdd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IAStartGame {
+            get {
+                object obj = ResourceManager.GetObject("IAStartGame", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,6 +396,26 @@ namespace DDS_Trainer.Properties {
         internal static System.Drawing.Bitmap leftArrow {
             get {
                 object obj = ResourceManager.GetObject("leftArrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap leftArrowTut {
+            get {
+                object obj = ResourceManager.GetObject("leftArrowTut", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap leftArrowTut1 {
+            get {
+                object obj = ResourceManager.GetObject("leftArrowTut1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -526,6 +676,16 @@ namespace DDS_Trainer.Properties {
         internal static System.Drawing.Bitmap rightArrow {
             get {
                 object obj = ResourceManager.GetObject("rightArrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rightArrowTut {
+            get {
+                object obj = ResourceManager.GetObject("rightArrowTut", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

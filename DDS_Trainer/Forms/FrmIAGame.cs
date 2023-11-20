@@ -21,7 +21,8 @@ namespace DDS_Trainer.Forms
         //Form that is called when the user wishes to return back to the main menu,
         //endApplication is false so it simply closes this form.
         private FrmClose frmClose = new FrmClose(message: "Are you sure you want close this window?", endApplication: false);
-
+        //List of tutorial images
+        private List<Image> TutImages = new List<Image>();
         //-----------------------------------------------------------------------------------------------//     
         /// <summary>
         /// Paramaterised Constructor, we pass 
@@ -35,7 +36,14 @@ namespace DDS_Trainer.Forms
             cntrlIAGame1.GameOver += IAGame_GameOver;
             //Subscribed to event handler that is triggered by frmClose.
             this.frmClose.GoBack += Goback;
-
+            //Add all tutorial images to list
+            this.TutImages.Add(Properties.Resources.IAStartGame);
+            this.TutImages.Add(Properties.Resources.IAColorSelect);
+            this.TutImages.Add(Properties.Resources.IAApplyColor);
+            this.TutImages.Add(Properties.Resources.IAMatchingQtoA);
+            this.TutImages.Add(Properties.Resources.IAMatchingReassign);
+            this.TutImages.Add(Properties.Resources.IAScoreTimeAdd);
+            this.TutImages.Add(Properties.Resources.IANewPrompts);
         }
         //-----------------------------------------------------------------------------------------------//
         #region Form Operations
@@ -48,6 +56,16 @@ namespace DDS_Trainer.Forms
         private void btnBack_Click(object sender, EventArgs e)
         {
             Back();
+        }
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Tutorial button clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnTutorial_Click(object sender, EventArgs e)
+        {
+            LoadTutorial();
         }
         #endregion
         //-----------------------------------------------------------------------------------------------//
@@ -93,6 +111,16 @@ namespace DDS_Trainer.Forms
         {
             this.MainMenu.LbDisplayTxtName = "IAScoreDisplay.txt";
             this.MainMenu.UpdateCntrlLeaderboard("Identifying Areas");
+        }
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Shows the tutorial Form and loads images into it
+        /// </summary>
+        private void LoadTutorial()
+        {
+            FrmTutorial tutorial = new FrmTutorial();
+            tutorial.LoadImages(this.TutImages);
+            tutorial.Show();
         }
         #endregion
     }

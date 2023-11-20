@@ -37,15 +37,13 @@
             // 
             // btnFinish
             // 
-            this.btnFinish.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFinish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFinish.BackgroundImage = global::DDS_Trainer.Properties.Resources.finish;
             this.btnFinish.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFinish.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFinish.FlatAppearance.BorderSize = 0;
             this.btnFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinish.Location = new System.Drawing.Point(201, 249);
+            this.btnFinish.Location = new System.Drawing.Point(215, 349);
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.Size = new System.Drawing.Size(100, 38);
             this.btnFinish.TabIndex = 6;
@@ -54,33 +52,30 @@
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrevious.BackgroundImage = global::DDS_Trainer.Properties.Resources.leftArrow;
+            this.btnPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrevious.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrevious.BackgroundImage = global::DDS_Trainer.Properties.Resources.leftArrowTut1;
             this.btnPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrevious.FlatAppearance.BorderSize = 0;
             this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrevious.Location = new System.Drawing.Point(3, 243);
+            this.btnPrevious.Location = new System.Drawing.Point(33, 343);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(50, 50);
             this.btnPrevious.TabIndex = 5;
-            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.UseVisualStyleBackColor = false;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnNext
             // 
-            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNext.BackColor = System.Drawing.Color.Black;
-            this.btnNext.BackgroundImage = global::DDS_Trainer.Properties.Resources.rightArrow;
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNext.BackColor = System.Drawing.Color.Transparent;
+            this.btnNext.BackgroundImage = global::DDS_Trainer.Properties.Resources.rightArrowTut;
             this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Location = new System.Drawing.Point(447, 243);
+            this.btnNext.Location = new System.Drawing.Point(447, 343);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(50, 50);
             this.btnNext.TabIndex = 4;
@@ -89,13 +84,11 @@
             // 
             // pbTutorial
             // 
-            this.pbTutorial.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbTutorial.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbTutorial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbTutorial.Location = new System.Drawing.Point(0, 0);
+            this.pbTutorial.Location = new System.Drawing.Point(15, 18);
             this.pbTutorial.Name = "pbTutorial";
-            this.pbTutorial.Size = new System.Drawing.Size(500, 235);
+            this.pbTutorial.Size = new System.Drawing.Size(500, 300);
             this.pbTutorial.TabIndex = 2;
             this.pbTutorial.TabStop = false;
             // 
@@ -104,12 +97,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImage = global::DDS_Trainer.Properties.Resources.PixWrinkledPaper;
             this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.pbTutorial);
             this.Name = "CntrlTutorial";
-            this.Size = new System.Drawing.Size(500, 300);
+            this.Size = new System.Drawing.Size(530, 400);
             ((System.ComponentModel.ISupportInitialize)(this.pbTutorial)).EndInit();
             this.ResumeLayout(false);
 

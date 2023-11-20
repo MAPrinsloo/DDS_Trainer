@@ -131,6 +131,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\IAScoreTimeAdd.png" />
+    <None Include="Resources\IANewPrompts.png" />
+    <None Include="Resources\IAStartGame.png" />
+    <None Include="Resources\IAScoreAndTimeAdded.png" />
+    <None Include="Resources\IAMatchingReassign.png" />
+    <None Include="Resources\IAMatchingQtoA.png" />
+    <None Include="Resources\IAColorSelect.png" />
+    <None Include="Resources\IAApplyColor.png" />
+    <None Include="Resources\FCNscoreAdded.png" />
+    <None Include="Resources\FCNoptionRegen.png" />
+    <None Include="Resources\FCNdepth3.png" />
+    <None Include="Resources\FCNdepth2.png" />
+    <None Include="Resources\FCNdepth1.png" />
+    <None Include="Images\FCNTutPlay.png" />
+    <None Include="Images\rightArrowTut.png" />
+    <None Include="Images\leftArrowTut.png" />
     <None Include="Images\finish.png" />
     <None Include="Images\CloseButtonCrop.png" />
     <None Include="Images\tutorial_icon.png" />

@@ -46,8 +46,8 @@ namespace DDS_Trainer.Components
         private bool QuestionCallNumbers = true;
         //Label of the question selected
         private Label QuestionSelected = null;
-        //Used for counting down from 2 minutes
-        private TimeSpan CountdownTime = TimeSpan.FromMinutes(2);
+        //Used for counting down from 30 seconds
+        private TimeSpan CountdownTime = TimeSpan.FromSeconds(30);
 
         //User score starts at 0
         private int Score = 0;
@@ -276,6 +276,7 @@ namespace DDS_Trainer.Components
             if (this.AddedScore == true)
             {
                 lblAddedScore.Visible = !lblAddedScore.Visible;
+                lblAddedTime.Visible = !lblAddedTime.Visible;
                 this.ScoreFlashCounter++;
             }
             //toggle visible 4 times. (shows twice)
@@ -585,7 +586,7 @@ namespace DDS_Trainer.Components
                     this.Score += 100;
                     this.AddedScore = true;
                     lblScore.Text = "SCORE: " + this.Score;
-
+                    this.CountdownTime += TimeSpan.FromSeconds(10);
                     ResetGame();
                 }
             }
@@ -620,7 +621,7 @@ namespace DDS_Trainer.Components
             ToggleVisibility();
             ResetOptionImages();
             this.QuestionSelected = null;
-            this.CountdownTime = TimeSpan.FromMinutes(2);
+            this.CountdownTime = TimeSpan.FromSeconds(30);
             ResetGame();
             for (int counter = 0; counter < this.TopScores.Count; counter++)
             {

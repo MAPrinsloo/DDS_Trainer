@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="leftArrowTut1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\leftArrowTut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="IAActivityIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\IAActivityIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,11 +139,17 @@
   <data name="pixArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\pixArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="finish" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\finish.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pixClipMarkersBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\pixClipMarkersBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="c806f2002fff400b6f8191177df3b278" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\c806f2002fff400b6f8191177df3b278.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tutorial_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\tutorial_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pixelDesktop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\pixelDesktop.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,9 +178,6 @@
   <data name="CloseButtonCrop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\CloseButtonCrop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PixWrinkledPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\PixWrinkledPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pixMarkerBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\pixMarkerBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,6 +196,9 @@
   <data name="pixMarkerPurple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\pixMarkerPurple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="leftArrowTut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\leftArrowTut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="back-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\back-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -198,6 +207,9 @@
   </data>
   <data name="PixWoodTexture" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\PixWoodTexture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="box" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="QuestionMark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\QuestionMark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,26 +220,23 @@
   <data name="pixPurpleMark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\pixPurpleMark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pixClipMarkerGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\pixClipMarkerGreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pixClipMarkerPurple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\pixClipMarkerPurple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="output-onlinepngtools (16)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\output-onlinepngtools (16).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FNCGameBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FNCGameBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rightArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\rightArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pixClipMarkerGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\pixClipMarkerGreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="output-onlinepngtools (16)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\output-onlinepngtools (16).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pixMarkerGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\pixMarkerGreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="box" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rightArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\rightArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Exit-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Exit-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,8 +256,8 @@
   <data name="CloseButton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\CloseButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tutorial_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\tutorial_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CloseApp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\CloseApp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="YellowWhiteStripedBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\YellowWhiteStripedBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,13 +268,52 @@
   <data name="CloseButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\CloseButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CloseApp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\CloseApp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PixWrinkledPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\PixWrinkledPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pixRedMark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\pixRedMark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="finish" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\finish.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rightArrowTut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\rightArrowTut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FCNdepth1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FCNdepth1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FCNdepth2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FCNdepth2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FCNdepth3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FCNdepth3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FCNoptionRegen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FCNoptionRegen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FCNscoreAdded" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FCNscoreAdded.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FCNTutPlay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\FCNTutPlay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IAApplyColor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IAApplyColor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IAColorSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IAColorSelect.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IAMatchingQtoA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IAMatchingQtoA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IAMatchingReassign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IAMatchingReassign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IAStartGame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IAStartGame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IANewPrompts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IANewPrompts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IAScoreTimeAdd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IAScoreTimeAdd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

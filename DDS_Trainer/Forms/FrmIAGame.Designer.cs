@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmIAGame));
             this.cntrlIAGame1 = new DDS_Trainer.Components.CntrlIAGame();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnTutorial = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cntrlIAGame1
@@ -60,6 +61,22 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnTutorial
+            // 
+            this.btnTutorial.BackColor = System.Drawing.Color.Transparent;
+            this.btnTutorial.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTutorial.BackgroundImage")));
+            this.btnTutorial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnTutorial.FlatAppearance.BorderSize = 0;
+            this.btnTutorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTutorial.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnTutorial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTutorial.Location = new System.Drawing.Point(1216, 12);
+            this.btnTutorial.Name = "btnTutorial";
+            this.btnTutorial.Size = new System.Drawing.Size(37, 39);
+            this.btnTutorial.TabIndex = 4;
+            this.btnTutorial.UseVisualStyleBackColor = false;
+            this.btnTutorial.Click += new System.EventHandler(this.btnTutorial_Click);
+            // 
             // FrmIAGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -68,6 +85,7 @@
             this.BackgroundImage = global::DDS_Trainer.Properties.Resources.PixWrinkledPaper;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1308, 752);
+            this.Controls.Add(this.btnTutorial);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.cntrlIAGame1);
             this.DoubleBuffered = true;
@@ -83,5 +101,6 @@
 
         private Components.CntrlIAGame cntrlIAGame1;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnTutorial;
     }
 }

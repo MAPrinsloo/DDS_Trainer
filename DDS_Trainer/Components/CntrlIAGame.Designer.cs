@@ -51,6 +51,7 @@
             this.btnMarker = new System.Windows.Forms.Button();
             this.lblTitleQuestions = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblAddedTime = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblQuestion1
@@ -294,7 +295,7 @@
             this.lblScore.BackColor = System.Drawing.Color.Transparent;
             this.lblScore.Font = new System.Drawing.Font("Retro Computer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore.ForeColor = System.Drawing.Color.White;
-            this.lblScore.Location = new System.Drawing.Point(1049, 40);
+            this.lblScore.Location = new System.Drawing.Point(1049, 77);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(179, 37);
             this.lblScore.TabIndex = 14;
@@ -307,7 +308,7 @@
             this.lblAddedScore.BackColor = System.Drawing.Color.Transparent;
             this.lblAddedScore.Font = new System.Drawing.Font("Retro Computer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddedScore.ForeColor = System.Drawing.Color.White;
-            this.lblAddedScore.Location = new System.Drawing.Point(1174, 77);
+            this.lblAddedScore.Location = new System.Drawing.Point(1174, 114);
             this.lblAddedScore.Name = "lblAddedScore";
             this.lblAddedScore.Size = new System.Drawing.Size(93, 37);
             this.lblAddedScore.TabIndex = 15;
@@ -316,7 +317,7 @@
             // 
             // TimeTimer
             // 
-            this.TimeTimer.Interval = 1000;
+            this.TimeTimer.Interval = 10000;
             this.TimeTimer.Tick += new System.EventHandler(this.cntrlTimeTimerEvent);
             // 
             // ilMarkers
@@ -367,6 +368,20 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "To Answers";
             // 
+            // lblAddedTime
+            // 
+            this.lblAddedTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAddedTime.AutoSize = true;
+            this.lblAddedTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblAddedTime.Font = new System.Drawing.Font("Retro Computer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddedTime.ForeColor = System.Drawing.Color.White;
+            this.lblAddedTime.Location = new System.Drawing.Point(1212, 40);
+            this.lblAddedTime.Name = "lblAddedTime";
+            this.lblAddedTime.Size = new System.Drawing.Size(69, 37);
+            this.lblAddedTime.TabIndex = 19;
+            this.lblAddedTime.Text = "+10";
+            this.lblAddedTime.Visible = false;
+            // 
             // CntrlIAGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,6 +389,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::DDS_Trainer.Properties.Resources.IAGameBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.lblAddedTime);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitleQuestions);
             this.Controls.Add(this.btnMarker);
@@ -422,5 +438,6 @@
         private System.Windows.Forms.Button btnMarker;
         private System.Windows.Forms.Label lblTitleQuestions;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAddedTime;
     }
 }

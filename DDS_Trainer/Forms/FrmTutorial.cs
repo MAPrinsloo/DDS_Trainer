@@ -34,7 +34,8 @@ namespace DDS_Trainer.Forms
             cntrlTutorial1.LoadImages(images);
         }
 
-        private void cntrlTutorial1_Load(object sender, EventArgs e)
+
+        private void cntrlTutorial1_Load_1(object sender, EventArgs e)
         {
 
         }

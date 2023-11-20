@@ -1,4 +1,5 @@
 ﻿using DDS_Trainer.Components;
+using DDS_Trainer.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,8 @@ namespace DDS_Trainer.Forms
         //Form that is called when the user wishes to return back to the main menu,
         //endApplication is false so it simply closes this form.
         private FrmClose frmClose = new FrmClose(message: "Are you sure you want close this window?", endApplication: false);
-
+        //List of tutorial images
+        private List<Image> TutImages = new List<Image>();
         //-----------------------------------------------------------------------------------------------//     
         /// <summary>
         /// Paramaterised Constructor, we pass 
@@ -32,7 +34,13 @@ namespace DDS_Trainer.Forms
             cntrlFCNGame1.GameOver += FCNGame_GameOver;
             //Subscribed to event handler that is triggered by frmClose.
             this.frmClose.GoBack += Goback;
-
+            //Add all tutorial images to list
+            this.TutImages.Add(Properties.Resources.FCNTutPlay);
+            this.TutImages.Add(Properties.Resources.FCNdepth1);
+            this.TutImages.Add(Properties.Resources.FCNdepth2);
+            this.TutImages.Add(Properties.Resources.FCNdepth3);
+            this.TutImages.Add(Properties.Resources.FCNoptionRegen);
+            this.TutImages.Add(Properties.Resources.FCNscoreAdded);
         }
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
@@ -47,6 +55,16 @@ namespace DDS_Trainer.Forms
         private void btnBack_Click(object sender, EventArgs e)
         {
             Back();
+        }
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Tutorial button clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnTutorial_Click(object sender, EventArgs e)
+        {
+            LoadTutorial();
         }
         #endregion
         //-----------------------------------------------------------------------------------------------//
@@ -93,15 +111,14 @@ namespace DDS_Trainer.Forms
         {
             frmClose.ShowDialog();
         }
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Shows the tutorial Form and loads images into it
+        /// </summary>
         private void LoadTutorial() 
         {
-            List<Image> images = new List<Image>();
-            for (int i = 0; i < ilTutorial.Images.Count; i++)
-            {
-                images.Add(ilTutorial.Images[i]);
-            }
             FrmTutorial tutorial = new FrmTutorial();
-            tutorial.LoadImages(images);
+            tutorial.LoadImages(this.TutImages);
             tutorial.Show();
         }
         //-----------------------------------------------------------------------------------------------//
@@ -115,13 +132,7 @@ namespace DDS_Trainer.Forms
         {
             UpdateLeaderboard();
         }
-
         #endregion
-
-        private void btnTutorial_Click(object sender, EventArgs e)
-        {
-            LoadTutorial();
-        }
     }
 }
 //===============================================================================================//

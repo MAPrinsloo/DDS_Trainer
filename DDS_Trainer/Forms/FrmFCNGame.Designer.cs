@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFCNGame));
             this.btnBack = new System.Windows.Forms.Button();
             this.btnTutorial = new System.Windows.Forms.Button();
             this.cntrlFCNGame1 = new DDS_Trainer.Components.CntrlFCNGame();
-            this.ilTutorial = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // btnBack
@@ -77,15 +75,6 @@
             this.cntrlFCNGame1.Size = new System.Drawing.Size(1284, 683);
             this.cntrlFCNGame1.TabIndex = 0;
             // 
-            // ilTutorial
-            // 
-            this.ilTutorial.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilTutorial.ImageStream")));
-            this.ilTutorial.TransparentColor = System.Drawing.Color.Transparent;
-            this.ilTutorial.Images.SetKeyName(0, "ClosedBookBlue.png");
-            this.ilTutorial.Images.SetKeyName(1, "ClosedBookDarkBlue.png");
-            this.ilTutorial.Images.SetKeyName(2, "ClosedBookGreen.png");
-            this.ilTutorial.Images.SetKeyName(3, "ClosedBookPurple.png");
-            // 
             // FrmFCNGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,6 +98,5 @@
         private Components.CntrlFCNGame cntrlFCNGame1;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnTutorial;
-        private System.Windows.Forms.ImageList ilTutorial;
     }
 }
