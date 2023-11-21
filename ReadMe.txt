@@ -32,6 +32,12 @@ if done correctly you should be in the debug folder.
 If it is not in that directory it will be attached as 
 retro_computer_personal_use.ttf in the main directory of this folder
 
+
+For github:
+For part 3 change the branch to remote branches Part_3
+
+https://github.com/MAPrinsloo/DDS_Trainer/tree/Part_3
+
 //----------------------------------------------------------------------------//
 //Running
 Follow these steps to run the application:
