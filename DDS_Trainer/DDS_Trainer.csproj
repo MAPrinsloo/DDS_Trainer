@@ -131,6 +131,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="bin\Debug\DDS_Trainer.exe.config" />
+    <None Include="bin\Debug\retro_computer_personal_use.ttf" />
     <None Include="Resources\RBAscending.png" />
     <None Include="Resources\RBUnslot2.png" />
     <None Include="Resources\RBUnslot1.png" />
@@ -221,6 +223,21 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Content Include="bin\Debug\DDSLibrary.dll" />
+    <Content Include="bin\Debug\DDSLibrary.pdb" />
+    <Content Include="bin\Debug\DDS_Trainer.exe" />
+    <Content Include="bin\Debug\DDS_Trainer.pdb" />
+    <Content Include="bin\Debug\DeweyDecimals.txt" />
+    <Content Include="bin\Debug\DeweyDecimalsWithRoot.txt" />
+    <Content Include="bin\Debug\FCNPlayers.txt" />
+    <Content Include="bin\Debug\FCNScore.txt" />
+    <Content Include="bin\Debug\FCNScoreDisplay.txt" />
+    <Content Include="bin\Debug\IAPlayers.txt" />
+    <Content Include="bin\Debug\IAScore.txt" />
+    <Content Include="bin\Debug\IAScoreDisplay.txt" />
+    <Content Include="bin\Debug\RBPlayers.txt" />
+    <Content Include="bin\Debug\RBScore.txt" />
+    <Content Include="bin\Debug\RBScoreDisplay.txt" />
     <Content Include="Fonts\retro_computer_personal_use.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -276,7 +293,9 @@
   <ItemGroup>
     <None Include="Images\pixelDesktop.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Images\PixWallOfBooks.png" />
   </ItemGroup>
