@@ -1,0 +1,8 @@
+1		300		MAT
+2		300		MEE
+3		300		SSS
+4		200		MEN
+5		200		YES
+6		200		RAT
+7		200		CAT
+8		0		TES

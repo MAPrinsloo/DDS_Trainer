@@ -1,0 +1,8 @@
+1		500		MAT
+2		200		YES
+3		200		ABC
+4		200		MAT
+5		100		RAT
+6		100		MAN
+7		0		TES
+8		0		BEN

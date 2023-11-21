@@ -1,0 +1,8 @@
+MAT
+YES
+ABC
+MAT
+RAT
+MAN
+TES
+BEN
