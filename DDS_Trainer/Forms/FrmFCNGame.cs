@@ -1,4 +1,7 @@
-﻿using DDS_Trainer.Components;
+﻿// Author: Matthew Alexander Prinsloo
+// Student Number: ST10081850
+// Subject code: PROG7312
+using DDS_Trainer.Components;
 using DDS_Trainer.Properties;
 using System;
 using System.Collections.Generic;
@@ -52,6 +55,12 @@ namespace DDS_Trainer.Forms
         }
         //-----------------------------------------------------------------------------------------------//
         #region Form Operations
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Back button clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBack_Click(object sender, EventArgs e)
         {
             Back();
@@ -120,17 +129,6 @@ namespace DDS_Trainer.Forms
             FrmTutorial tutorial = new FrmTutorial();
             tutorial.LoadImages(this.TutImages);
             tutorial.Show();
-        }
-        //-----------------------------------------------------------------------------------------------//
-        /// <summary>
-        /// Event that is triggered when the game on RBGame is over.
-        /// Updates the leaderboard if called.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void RBGame_GameOver(object sender, EventArgs e)
-        {
-            UpdateLeaderboard();
         }
         #endregion
     }

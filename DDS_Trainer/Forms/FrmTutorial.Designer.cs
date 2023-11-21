@@ -40,7 +40,6 @@
             this.cntrlTutorial1.Name = "cntrlTutorial1";
             this.cntrlTutorial1.Size = new System.Drawing.Size(530, 400);
             this.cntrlTutorial1.TabIndex = 1;
-            this.cntrlTutorial1.Load += new System.EventHandler(this.cntrlTutorial1_Load_1);
             // 
             // FrmTutorial
             // 

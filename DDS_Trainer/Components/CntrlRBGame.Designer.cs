@@ -89,6 +89,7 @@
             this.btnPlay.BackColor = System.Drawing.Color.Transparent;
             this.btnPlay.BackgroundImage = global::DDS_Trainer.Properties.Resources.PixStopWatch;
             this.btnPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPlay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPlay.FlatAppearance.BorderSize = 0;
             this.btnPlay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnPlay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;

@@ -317,7 +317,7 @@
             // 
             // TimeTimer
             // 
-            this.TimeTimer.Interval = 10000;
+            this.TimeTimer.Interval = 1000;
             this.TimeTimer.Tick += new System.EventHandler(this.cntrlTimeTimerEvent);
             // 
             // ilMarkers

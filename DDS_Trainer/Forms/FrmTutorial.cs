@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Author: Matthew Alexander Prinsloo
+// Student Number: ST10081850
+// Subject code: PROG7312
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,12 +17,16 @@ namespace DDS_Trainer.Forms
     {
         //Exit Applicaton is to exit the application.
         public event EventHandler ExitApplicaton;
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public FrmTutorial()
         {
             InitializeComponent();
             cntrlTutorial1.FinishTutorial += Finished;
         }
-
+        //-----------------------------------------------------------------------------------------------//
         /// <summary>
         /// Invoked on button exit click. This checks
         /// if the application or form needs to close
@@ -28,16 +35,16 @@ namespace DDS_Trainer.Forms
         private void Finished(object sender, EventArgs e)
         {
             this.Close();
-        }
+        }        
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Load the tutorial images
+        /// </summary>
+        /// <param name="images"></param>
         public void LoadImages(List<Image> images) 
         {
             cntrlTutorial1.LoadImages(images);
         }
-
-
-        private void cntrlTutorial1_Load_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
+//-----------------------------------------------------------------------------------------------//

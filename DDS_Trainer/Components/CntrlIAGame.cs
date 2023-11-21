@@ -384,8 +384,19 @@ namespace DDS_Trainer.Components
                 //Remove to ensure no duplicates occur
                 keys.RemoveAt(randomIndex);
             }
+            PopulateOptions_Descriptions(tempOptionLabels, questionKeyList, keys, random);
+        }
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Populates options with descriptions
+        /// </summary>
+        /// <param name="tempOptionLabels"></param>
+        /// <param name="questionKeyList"></param>
+        /// <param name="keys"></param>
+        private void PopulateOptions_Descriptions(List<Label> tempOptionLabels, List<string> questionKeyList, List<string> keys, Random random) 
+        {
+            var randomIndex = 0;
 
-            //Populates options with descriptions
             for (int counter = 0; counter < this.OptionLabelsList.Count; counter++)
             {
                 var minValue = 0;
@@ -441,6 +452,18 @@ namespace DDS_Trainer.Components
                 //Remove to ensure no duplicates occur
                 keys.RemoveAt(randomIndex);
             }
+            PopulateOptions_CallNum(tempOptionLabels, questionKeyList, keys, random);
+        }
+        //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Populates options with CallNums
+        /// </summary>
+        /// <param name="tempOptionLabels"></param>
+        /// <param name="questionKeyList"></param>
+        /// <param name="keys"></param>
+        private void PopulateOptions_CallNum(List<Label> tempOptionLabels, List<string> questionKeyList, List<string> keys, Random random)
+        {
+            var randomIndex = 0;
 
             //Populates options with keys
             for (int counter = 0; counter < this.OptionLabelsList.Count; counter++)

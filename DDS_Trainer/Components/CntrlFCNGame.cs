@@ -1,4 +1,7 @@
-﻿using DDS_Trainer.Classes;
+﻿// Author: Matthew Alexander Prinsloo
+// Student Number: ST10081850
+// Subject code: PROG7312
+using DDS_Trainer.Classes;
 using DDS_Trainer.Forms;
 using System;
 using System.Collections.Generic;
@@ -17,16 +20,25 @@ namespace DDS_Trainer.Components
 {
     public partial class CntrlFCNGame : UserControl
     {
+        #region variables
         //Checks if the game is over, subscribed to by other forms.
         public event EventHandler GameOver;
+        //object of the treemanager class
         private TreeManager treeManager = new TreeManager();
+        //object of the treeNode class, holds the full dewey Tree
         private TreeNode TreeRoot;
+        //object of the treeNode class, holds the smaller Tree pertaining the questions selected
         private TreeNode QuestionsRoot;
+        //List of question labels
         private List<Label> QuestionLabelsList = new List<Label>();
+        //List of decimals used in the question labels
         private List<string> QuestionLabelsDecimal = new List<string>();
+        //Tree of answers
         private List<TreeNode> AnswerList = new List<TreeNode>();
+        //Used for randomisation
         private Random random = new Random();
-        private int CurrentQuestionLevel = 3;
+        //This is the current depth of the question on initialisation
+        private int CurrentQuestionLevel = 2;
 
 
         //Used for counting down from 2 minutes
@@ -58,8 +70,9 @@ namespace DDS_Trainer.Components
 
         //Filemanager called from the class library. handles txt files
         private DDSLibrary.FileManager fileManager = new DDSLibrary.FileManager();
+        //bool value for if the game should flash the labels a color
         private bool FlashColor = false;
-
+        #endregion
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
         /// Default constructor
@@ -71,38 +84,60 @@ namespace DDS_Trainer.Components
         }
         //-----------------------------------------------------------------------------------------------//
         #region Form Operations
+        #region question labels
         //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Question 1 click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblQuestoin1_Click(object sender, EventArgs e)
         {
-            if (CheckAnswerList(QuestionLabelsDecimal[0]) == false)
+            if (CheckAnswerList(this.QuestionLabelsDecimal[0]) == false)
             {
                 ResetGame();
             }
         }
         //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Question 2 click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblQuestoin2_Click(object sender, EventArgs e)
         {
-            if (CheckAnswerList(QuestionLabelsDecimal[1]) == false)
+            if (CheckAnswerList(this.QuestionLabelsDecimal[1]) == false)
             {
                 ResetGame();
             }
         }
         //-----------------------------------------------------------------------------------------------//      
+        /// <summary>
+        /// Question 3 click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblQuestoin3_Click(object sender, EventArgs e)
         {
-            if (CheckAnswerList(QuestionLabelsDecimal[2]) == false)
+            if (CheckAnswerList(this.QuestionLabelsDecimal[2]) == false)
             {
                 ResetGame();
             }
         }
         //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Question 4 click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblQuestoin4_Click(object sender, EventArgs e)
         {
-            if (CheckAnswerList(QuestionLabelsDecimal[3]) == false)
+            if (CheckAnswerList(this.QuestionLabelsDecimal[3]) == false)
             {
                 ResetGame();
             }
         }
+        #endregion
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
         /// Timer countdown 
@@ -137,7 +172,7 @@ namespace DDS_Trainer.Components
         }
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
-        /// 
+        /// Play button clicked
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -147,22 +182,26 @@ namespace DDS_Trainer.Components
         }
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
-        /// 
+        /// Timer used to flash the labels a certain color
+        /// green for correct
+        /// red for incorrect
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void cntrlFlashTimerEvent(object sender, EventArgs e)
         {
-            if (FlashColor == true)
+            //Toggle state on flash color
+            if (this.FlashColor == true)
             {
-                FlashColor = false;
+                this.FlashColor = false;
             }
-            else if ((lblQuestionHeader.ForeColor != Color.White || lblQuestoin1.ForeColor != Color.White) && FlashColor == false)
+            //Stop timer and reset to white
+            else if ((lblQuestionHeader.ForeColor != Color.White || lblQuestoin1.ForeColor != Color.White) && this.FlashColor == false)
             {
                 lblQuestionHeader.ForeColor = Color.White;
-                for (int counter = 0; counter < QuestionLabelsList.Count; counter++)
+                for (int counter = 0; counter < this.QuestionLabelsList.Count; counter++)
                 {
-                    QuestionLabelsList[counter].ForeColor = Color.White;
+                    this.QuestionLabelsList[counter].ForeColor = Color.White;
                 }
                 FlashTimer.Stop();
             }
@@ -179,32 +218,38 @@ namespace DDS_Trainer.Components
             btnPlay.Enabled = false;
             lblScore.Text = "SCORE: " + this.Score;
             ToggleVisibility();
-            AssignQuestions(this.QuestionsRoot, 2, null);
+            AssignQuestions(this.QuestionsRoot, this.CurrentQuestionLevel, null);
             PopulateAnswerList(this.QuestionsRoot);
             TimeTimer.Start();
         }
         //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Resets the game to be re-played
+        /// </summary>
         private void ResetGame() 
         {
-            this.QuestionsRoot = treeManager.GenerateQuestions(this.TreeRoot, 4);
+            this.QuestionsRoot = this.treeManager.GenerateQuestions(this.TreeRoot, 4);
             this.QuestionLabelsDecimal.Clear();
-            this.CurrentQuestionLevel = 3;
+            this.CurrentQuestionLevel = 2;
             this.AnswerList.Clear();
-            AssignQuestions(this.QuestionsRoot, 2, null);
+            AssignQuestions(this.QuestionsRoot, this.CurrentQuestionLevel, null);
             PopulateAnswerList(this.QuestionsRoot);
         }
         //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Initialises the control that houses FCNGame
+        /// </summary>
         private void InitialiseControl() 
         {
             UpdateLabel();
             //Load from text file into tree
-            this.TreeRoot = treeManager.BuildTreeFromFile("DeweyDecimals.txt");
+            this.TreeRoot = this.treeManager.BuildTreeFromFile("DeweyDecimals.txt");
             //Initialise Questions root
-            this.QuestionsRoot = treeManager.GenerateQuestions(this.TreeRoot, 4);
-            QuestionLabelsList.Add(lblQuestoin1);
-            QuestionLabelsList.Add(lblQuestoin2);
-            QuestionLabelsList.Add(lblQuestoin3);
-            QuestionLabelsList.Add(lblQuestoin4);
+            this.QuestionsRoot = this.treeManager.GenerateQuestions(this.TreeRoot, 4);
+            this.QuestionLabelsList.Add(lblQuestoin1);
+            this.QuestionLabelsList.Add(lblQuestoin2);
+            this.QuestionLabelsList.Add(lblQuestoin3);
+            this.QuestionLabelsList.Add(lblQuestoin4);
             
             //create the files needed for storing user leaderboard data
             this.fileManager.CreateFile(this.ScoreTxtName);
@@ -244,13 +289,21 @@ namespace DDS_Trainer.Components
             }
         }
         //-----------------------------------------------------------------------------------------------//
-        //
-        //rootDecimal null = first come first serve
+        /// <summary>
+        /// Assign questions to the question labels
+        /// queriedDecimal null = first come first serve
+        /// setting the queriedDecimal will allow traversal to that node in the tree
+        /// showing the children of the queriedDecimal
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="targetDepth"></param>
+        /// <param name="queriedDecimal"></param>
         private void AssignQuestions(TreeNode root, int targetDepth, string queriedDecimal)
         {
             Queue<(TreeNode node, TreeNode parent)> queue = new Queue<(TreeNode, TreeNode)>();
             this.QuestionLabelsDecimal.Clear();
-            queue.Enqueue((root, null)); // Initially, parent is null for the root node
+            //Parent is null for the root node
+            queue.Enqueue((root, null)); 
             int currentDepth = 0;
             int questionLabelCount = 0;
 
@@ -259,14 +312,16 @@ namespace DDS_Trainer.Components
                 int nodesAtCurrentLevel = queue.Count;
                 currentDepth++;
 
-                for (int i = 0; i < nodesAtCurrentLevel; i++)
+                for (int count = 0; count < nodesAtCurrentLevel; count++)
                 {
+                    //Deque a node and its parent
                     (TreeNode node, TreeNode parent) = queue.Dequeue();
 
                     if (currentDepth == targetDepth)
                     {
+                        //assign parent Dewey decimal code
                         string parentDewey = parent != null ? parent.GetDeweyDecimal() : "parent decimal";
-                        if ((queriedDecimal == null || queriedDecimal == parentDewey) && questionLabelCount < QuestionLabelsList.Count)
+                        if ((queriedDecimal == null || queriedDecimal == parentDewey) && questionLabelCount < this.QuestionLabelsList.Count)
                         {
                             this.QuestionLabelsList[questionLabelCount].Text = $"{node.GetDeweyDecimal()} {node.GetDescription()}";
                             this.QuestionLabelsDecimal.Add($"{node.GetDeweyDecimal()}");
@@ -274,104 +329,140 @@ namespace DDS_Trainer.Components
                             questionLabelCount++;
                         }
                     }
-
+                    //Node becomes the new parent as we traverse
                     foreach (TreeNode child in node.Children)
                     {
-                        queue.Enqueue((child, node)); // Enqueue child node along with its parent
+                        //Enqueue child node and its parent with its parent(node)
+                        queue.Enqueue((child, node)); 
                     }
                 }
             }
         }
         //-----------------------------------------------------------------------------------------------//
-        //
-        //
+        /// <summary>
+        /// Populates the global <TreeNode>Answerlist with answers relating
+        /// to the randomly chosen options from the parameter "root" Tree
+        /// users to follow the path of the answerlist to get points
+        /// </summary>
+        /// <param name="root"></param>
         private void PopulateAnswerList(TreeNode root)
         {
+            //relates the the lowest depth that can be reached in the tree
             int numAnswersNeeded = 3;
-            int currentDepth = 2;
+            //Record the current root as previous for when we treverse
             List<TreeNode> optionsAtPreviousDepth = new List<TreeNode> { root };
 
             for (int counter = 0; counter < numAnswersNeeded; counter++)
             {
-                optionsAtPreviousDepth = ChooseRandomOption(optionsAtPreviousDepth, currentDepth);
-                currentDepth++;
+                //Recursively traverese the Tree and randomly select a path that will be the answer
+                optionsAtPreviousDepth = ChooseRandomOption(optionsAtPreviousDepth);
             }
+            //Set the question header to the top level nodes description
             lblQuestionHeader.Text = "Find the call number for: \r\n" +
                 this.AnswerList[this.AnswerList.Count - 1].GetDescription();
-            MessageBox.Show(this.AnswerList[this.AnswerList.Count - 1].GetDeweyDecimal());
         }
         //-----------------------------------------------------------------------------------------------//
-        //
-        //
-        private List<TreeNode> ChooseRandomOption(List<TreeNode> nodesAtPreviousDepth, int targetDepth)
+        /// <summary>
+        /// Choose nodes Randomly from the Parameter Tree until answerlist is full
+        /// </summary>
+        /// <param name="nodesAtPreviousDepth"></param>
+        /// <returns></returns>
+        private List<TreeNode> ChooseRandomOption(List<TreeNode> nodesAtPreviousDepth)
         {
-            List<TreeNode> optionsAtTargetDepth = new List<TreeNode>();
-            Random rand = new Random();
+            //Traverse and load the children at the next depth
+            List<TreeNode> nodesAtNextDepth = new List<TreeNode>();
 
             foreach (TreeNode parent in nodesAtPreviousDepth)
             {
-                int randomNumber = getRandomNumber(0, 4);
+                //Generate a random index to select a child node
+                //Analysing the text file reveals that there are at a max 4 child nodes in the tree
+                var randomNumber = getRandomNumber(0, 4);
+                //If there are children continue
+                //No children means that the last level has been reached
                 if (parent.Children.Count > 0)
                 {
-                    TreeNode selectedNode = parent.Children[randomNumber];
-                    optionsAtTargetDepth.Add(selectedNode);
+                    //Select a random child node
+                    TreeNode randomNodeSelected = parent.Children[randomNumber];
+                    //Add the random node to the next depth list
+                    nodesAtNextDepth.Add(randomNodeSelected);
                 }
             }
-
-            foreach (TreeNode option in optionsAtTargetDepth)
+            //Add selected nodes at the next depth to the AnswerList
+            foreach (TreeNode randomNodeSelected in nodesAtNextDepth)
             {
-                AnswerList.Add(new TreeNode(option.GetDeweyDecimal(), option.GetDescription()));
+                this.AnswerList.Add(new TreeNode(randomNodeSelected.GetDeweyDecimal(), randomNodeSelected.GetDescription()));
             }
-
-            return optionsAtTargetDepth;
+            //List of nodes at the next depth
+            return nodesAtNextDepth;
         }
         //-----------------------------------------------------------------------------------------------//
-        //
+        /// <summary>
+        /// Checks the parameter Decimal Chosen and checks the answer list
+        /// to see if it contains it
+        /// Handles the answer correctness by manipulating the labels
+        /// </summary>
+        /// <param name="DecimalChosen"></param>
+        /// <returns></returns>
         private bool CheckAnswerList(string DecimalChosen) 
         {
             bool answer = false;
-            for (int counter = 0; counter < AnswerList.Count; counter++)
+            //Check to see if the answerlist contains the DecimalChosen by the user
+            for (int counter = 0; counter < this.AnswerList.Count; counter++)
             {
-                if (AnswerList[counter].DeweyDecimal == DecimalChosen)
+                if (this.AnswerList[counter].DeweyDecimal == DecimalChosen)
                 {
                     answer = true;
                 }
             }
-            if (answer == true && CurrentQuestionLevel > 4)
+            //Reset and handle game if the lowest level has been selected correctly
+            if (answer == true && this.CurrentQuestionLevel > 3)
             {
                 ResetGame();
                 this.Score += 100;
+                //Flash timer for flashing green
                 FlashTimer.Start();
+                //Flash green
                 lblQuestionHeader.ForeColor = Color.LawnGreen;
                 this.AddedScore = true;
                 lblScore.Text = "SCORE: " + this.Score;
             }
+            //Display next layer of children in the Tree
             else if (answer == true)
             {
-                AssignQuestions(this.QuestionsRoot, this.CurrentQuestionLevel, DecimalChosen);
-                FlashTimer.Start();
-                for (int counter = 0; counter < QuestionLabelsList.Count; counter++)
-                {
-                    QuestionLabelsList[counter].ForeColor = Color.LawnGreen;
-                }
                 this.CurrentQuestionLevel++;
+                AssignQuestions(this.QuestionsRoot, this.CurrentQuestionLevel, DecimalChosen);
+                //Flash timer for flashing green
+                FlashTimer.Start();
+                //Flash green for all question labels
+                for (int counter = 0; counter < this.QuestionLabelsList.Count; counter++)
+                {
+                    this.QuestionLabelsList[counter].ForeColor = Color.LawnGreen;
+                }
             }
             else 
             {
+                //Flash timer for flashing red
                 FlashTimer.Start();
-                for (int counter = 0; counter < QuestionLabelsList.Count; counter++)
+                //Flash red for all question labels
+                for (int counter = 0; counter < this.QuestionLabelsList.Count; counter++)
                 {
-                    QuestionLabelsList[counter].ForeColor = Color.Red;
+                    this.QuestionLabelsList[counter].ForeColor = Color.Red;
                 }
                 lblQuestionHeader.ForeColor = Color.Red;
 
             }
-            return answer;
+            return answer;        
+        }
         //-----------------------------------------------------------------------------------------------//
-        //
-        }private int getRandomNumber(int min, int max) 
+        /// <summary>
+        /// Return a random number between the min and max parameters
+        /// </summary>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        private int getRandomNumber(int min, int max) 
         {
-            int randomNumber = this.random.Next(min, max);
+            var randomNumber = this.random.Next(min, max);
             return randomNumber;
         }
         //-----------------------------------------------------------------------------------------------//
@@ -382,7 +473,6 @@ namespace DDS_Trainer.Components
         {
             lblTime.Text = "TIME: " + this.CountdownTime.ToString(@"mm\:ss");
         }
-
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
         /// Can be called to stop the 2 minute countdown timer.
@@ -399,7 +489,7 @@ namespace DDS_Trainer.Components
         {
             for (int count = 0; count < this.QuestionLabelsList.Count; count++)
             {
-                this.QuestionLabelsList[count].Visible = !QuestionLabelsList[count].Visible;
+                this.QuestionLabelsList[count].Visible = !this.QuestionLabelsList[count].Visible;
             }
             lblQuestionHeader.Visible = !lblQuestionHeader.Visible;
             btnPlay.Visible = !btnPlay.Visible;
@@ -525,3 +615,8 @@ namespace DDS_Trainer.Components
         #endregion
     }
 }
+//===============================================================================================//
+///References
+///https://www.geeksforgeeks.org/queue-data-structure/
+///https://www.programiz.com/csharp-programming/queue
+///Using Queues

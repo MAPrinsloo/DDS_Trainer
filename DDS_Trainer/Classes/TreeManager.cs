@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Author: Matthew Alexander Prinsloo
+// Student Number: ST10081850
+// Subject code: PROG7312
+using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.IO;
@@ -19,16 +22,24 @@ namespace DDS_Trainer.Classes
         {
         }
         //-----------------------------------------------------------------------------------------------//
+        /// <summary>
+        /// Create A tree from the data stored in the filepath
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
         public TreeNode BuildTreeFromFile(string filePath)
         {
-            TreeNode root = new TreeNode("Root", "Dewey Decimal Root"); // Create a Root node
+            //Create a Root node
+            TreeNode root = new TreeNode("Root", "Dewey Decimal Root"); 
             Dictionary<int, TreeNode> nodesByDepth = new Dictionary<int, TreeNode>();
-            nodesByDepth[0] = root; // Add Root node to dictionary
+            //Add Root node to dictionary
+            nodesByDepth[0] = root;
 
             string[] lines = File.ReadAllLines(filePath);
-
+            //Read all lines in text file
             foreach (string line in lines)
             {
+                //check what depth is being read
                 int depth = line.TakeWhile(c => c == '\t').Count();
 
                 string[] parts = line.Trim().Split(' ');
@@ -36,21 +47,28 @@ namespace DDS_Trainer.Classes
                 string description = string.Join(" ", parts.Skip(1));
 
                 TreeNode newNode = new TreeNode(deweyDecimal, description);
-
-                nodesByDepth[depth].Children.Add(newNode); // Add new node to its appropriate parent
-
-                nodesByDepth[depth + 1] = newNode; // Update dictionary with new node at current depth
+                //Add new node to its parent in the dictionary at the correct depth
+                nodesByDepth[depth].AddChild(newNode); 
+                //Update dictionary with new node at current depth
+                nodesByDepth[depth + 1] = newNode; 
             }
-
+            //root contains reference to all the treenodes added from the text file
             return root;
         }
         //-----------------------------------------------------------------------------------------------//
-        //
+        /// <summary>
+        /// Creates a Tree Root with top level nodes from the root in the parameter
+        /// The number of random nodes selected relates to the numQuestions parameter
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="numQuestions"></param>
+        /// <returns></returns>
         public TreeNode GenerateQuestions(TreeNode root, int numQuestions)
         {
+            //Top level nodes Tree
             List<TreeNode> topLevelNodes = new List<TreeNode>();
 
-            // Collect top-level nodes
+            //Collect top level nodes
             foreach (TreeNode node in root.Children)
             {
                 topLevelNodes.Add(node);
@@ -59,7 +77,7 @@ namespace DDS_Trainer.Classes
             List<TreeNode> selectedNodes = new List<TreeNode>();
             Random rand = new Random();
 
-            // Randomly select nodes
+            //Randomly select nodes
             while (selectedNodes.Count < numQuestions && topLevelNodes.Count > 0)
             {
                 int index = rand.Next(topLevelNodes.Count);
@@ -69,16 +87,25 @@ namespace DDS_Trainer.Classes
                 topLevelNodes.RemoveAt(index);
             }
 
-            selectedNodes = selectedNodes.OrderBy(node => node.GetDeweyDecimal()).ToList(); // Change the criterion for sorting if needed
+            selectedNodes = selectedNodes.OrderBy(node => node.GetDeweyDecimal()).ToList();
 
-            // Create a new higher-level node to contain selected nodes
-            TreeNode QuestionsRoot = new TreeNode("Questions", "Root"); // Name it appropriately
+            //New Tree to return, contains smaller tree to query and manage
+            //holds the question nodes selected and all their children
+            TreeNode QuestionsRoot = new TreeNode("Questions", "Root");
             foreach (TreeNode node in selectedNodes)
             {
-                QuestionsRoot.Children.Add(node);
+                QuestionsRoot.AddChild(node);
             }
 
             return QuestionsRoot;
         }
     }
 }
+/////===============================================================================================//
+///References
+///https://www.geeksforgeeks.org/generic-tree-level-order-traversal/
+///https://www.geeksforgeeks.org/generic-treesn-array-trees/
+///https://stackoverflow.com/questions/66893/tree-data-structure-in-c-sharp
+///Trees
+///https://codereview.stackexchange.com/questions/181683/building-a-data-tree-out-of-a-text-file-c
+///reading from text file to build tree

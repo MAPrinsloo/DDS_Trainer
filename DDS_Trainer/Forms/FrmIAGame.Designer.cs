@@ -29,20 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmIAGame));
-            this.cntrlIAGame1 = new DDS_Trainer.Components.CntrlIAGame();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnTutorial = new System.Windows.Forms.Button();
+            this.cntrlIAGame1 = new DDS_Trainer.Components.CntrlIAGame();
             this.SuspendLayout();
-            // 
-            // cntrlIAGame1
-            // 
-            this.cntrlIAGame1.BackColor = System.Drawing.Color.White;
-            this.cntrlIAGame1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cntrlIAGame1.BackgroundImage")));
-            this.cntrlIAGame1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cntrlIAGame1.Location = new System.Drawing.Point(12, 57);
-            this.cntrlIAGame1.Name = "cntrlIAGame1";
-            this.cntrlIAGame1.Size = new System.Drawing.Size(1284, 683);
-            this.cntrlIAGame1.TabIndex = 0;
             // 
             // btnBack
             // 
@@ -66,6 +56,7 @@
             this.btnTutorial.BackColor = System.Drawing.Color.Transparent;
             this.btnTutorial.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTutorial.BackgroundImage")));
             this.btnTutorial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnTutorial.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTutorial.FlatAppearance.BorderSize = 0;
             this.btnTutorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTutorial.ForeColor = System.Drawing.SystemColors.Desktop;
@@ -76,6 +67,16 @@
             this.btnTutorial.TabIndex = 4;
             this.btnTutorial.UseVisualStyleBackColor = false;
             this.btnTutorial.Click += new System.EventHandler(this.btnTutorial_Click);
+            // 
+            // cntrlIAGame1
+            // 
+            this.cntrlIAGame1.BackColor = System.Drawing.Color.White;
+            this.cntrlIAGame1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cntrlIAGame1.BackgroundImage")));
+            this.cntrlIAGame1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cntrlIAGame1.Location = new System.Drawing.Point(12, 57);
+            this.cntrlIAGame1.Name = "cntrlIAGame1";
+            this.cntrlIAGame1.Size = new System.Drawing.Size(1284, 683);
+            this.cntrlIAGame1.TabIndex = 0;
             // 
             // FrmIAGame
             // 

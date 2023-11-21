@@ -102,7 +102,7 @@ namespace DDS_Trainer.Components
             InitializeComponent();
             this.MainMenu = mainMenu;
             //event triggered.
-            NameEnteredCallback = GetNameFromCntrlHighScore;
+            this.NameEnteredCallback = GetNameFromCntrlHighScore;
             InitializeControl();
         }        
         //-----------------------------------------------------------------------------------------------//
@@ -126,14 +126,14 @@ namespace DDS_Trainer.Components
         /// <param name="e"></param>
         private void FormMouseDown(object sender, MouseEventArgs e)
         {
-            Point mousePosition = new Point(e.X, e.Y);
-            foreach (Book newBook in books)
+            var mousePosition = new Point(e.X, e.Y);
+            foreach (Book newBook in this.books)
             {
-                if (SelectedBook == null)
+                if (this.SelectedBook == null)
                 {
                     if (newBook.rect.Contains(mousePosition))
                     {
-                        SelectedBook = newBook;
+                        this.SelectedBook = newBook;
                         newBook.active = true;
                     }
                 }
@@ -149,33 +149,33 @@ namespace DDS_Trainer.Components
         /// <param name="e"></param>
         private void FormMouseMove(object sender, MouseEventArgs e)
         {
-            int subPointPos = 0;
+            var subPointPos = 0;
             //setting to negative effectively resets the book
             //as long as occupied is also set to false.
             //This allows users to drag a book out and try again.
             //SelectedBook.PosSnapped tracks the position a book is slotted in.
-            if (SelectedBook != null && SelectedBook.PosSnapped >= 0)
+            if (this.SelectedBook != null && this.SelectedBook.PosSnapped >= 0)
             {
-                submissionPoints[SelectedBook.PosSnapped - 1].Occupied = false;
-                SelectedBook.PosSnapped = -1;
+                this.submissionPoints[this.SelectedBook.PosSnapped - 1].Occupied = false;
+                this.SelectedBook.PosSnapped = -1;
             }
 
-            if (SelectedBook != null)
+            if (this.SelectedBook != null)
             {
-                SelectedBook.Position.X = e.X - (SelectedBook.Width / 2);
-                SelectedBook.Position.Y = e.Y - (SelectedBook.Height / 2);
+                this.SelectedBook.Position.X = e.X - (this.SelectedBook.Width / 2);
+                this.SelectedBook.Position.Y = e.Y - (this.SelectedBook.Height / 2);
 
                 //Checks the location and index of each sub point
                 //assign subPointPos to the selected book as its position snapped value.
-                foreach (SubmissionPoint point in submissionPoints)
+                foreach (SubmissionPoint point in this.submissionPoints)
                 {
                     subPointPos++;
-                    if (!point.Occupied && point.Rect.Contains(SelectedBook.Position))
+                    if (!point.Occupied && point.Rect.Contains(this.SelectedBook.Position))
                     {
-                        SelectedBook.Position = new Point(point.Rect.X, point.Rect.Y);
+                        this.SelectedBook.Position = new Point(point.Rect.X, point.Rect.Y);
                         point.Occupied = true;
-                        SelectedBook.PosSnapped = subPointPos;
-                        point.BookLabel = SelectedBook.Text;
+                        this.SelectedBook.PosSnapped = subPointPos;
+                        point.BookLabel = this.SelectedBook.Text;
                         //Forces the mouse to be released. Allows better snapping.
                         FormMouseUp(this, new MouseEventArgs(MouseButtons.Left, 0, 0, 0, 0));
                         break;
@@ -192,15 +192,15 @@ namespace DDS_Trainer.Components
         /// <param name="e"></param>
         private void FormMouseUp(object sender, MouseEventArgs e)
         {
-            foreach (Book tempBook in books)
+            foreach (Book tempBook in this.books)
             {
                 tempBook.active = false;
             }
-            SelectedBook = null;
+            this.SelectedBook = null;
 
-            List<string> placedBooksLabels = submissionPoints.Where(point => point.Occupied).Select(point => point.BookLabel).ToList();
+            List<string> placedBooksLabels = this.submissionPoints.Where(point => point.Occupied).Select(point => point.BookLabel).ToList();
             //checks to see if all sub slots are full
-            if (placedBooksLabels.Count == numberOfBooks)
+            if (placedBooksLabels.Count == this.numberOfBooks)
             {
                 checkBooks(placedBooksLabels);
                 placedBooksLabels.Clear();
@@ -215,7 +215,7 @@ namespace DDS_Trainer.Components
         /// <param name="e"></param>
         private void FormPaintEvent(object sender, PaintEventArgs e)
         {
-            foreach (Book book in books)
+            foreach (Book book in this.books)
             {
                 e.Graphics.DrawImage(book.BookImage, book.Position.X, book.Position.Y, book.Width, book.Height);
 
@@ -230,7 +230,7 @@ namespace DDS_Trainer.Components
                 }
             }
 
-            foreach (SubmissionPoint point in submissionPoints)
+            foreach (SubmissionPoint point in this.submissionPoints)
             {
                 if (!point.Occupied)
                 {
@@ -250,7 +250,7 @@ namespace DDS_Trainer.Components
         /// <param name="e"></param>
         private void CntrlBookTimerEvent(object sender, EventArgs e)
         {
-            foreach (Book book in books)
+            foreach (Book book in this.books)
             {
                 book.rect.X = book.Position.X;
                 book.rect.Y = book.Position.Y;
@@ -278,7 +278,7 @@ namespace DDS_Trainer.Components
                 StopGame();
             }
             
-            if (AddedScore == true)
+            if (this.AddedScore == true)
             {
                 lblAddedScore.Visible = !lblAddedScore.Visible;
                 this.ScoreFlashCounter++;
@@ -287,7 +287,7 @@ namespace DDS_Trainer.Components
             if (this.ScoreFlashCounter == 4)
             {
                 this.ScoreFlashCounter = 0;
-                AddedScore = false;
+                this.AddedScore = false;
             }
 
         }
@@ -303,15 +303,15 @@ namespace DDS_Trainer.Components
         {
             UpdateLabel();
             TimeTimer.Stop();
-            fileManager.CreateFile(ScoreTxtName);
-            fileManager.CreateFile(ScoreDisplayTxtName);
-            fileManager.CreateFile(PlayerTxtName);
+            this.fileManager.CreateFile(this.ScoreTxtName);
+            this.fileManager.CreateFile(this.ScoreDisplayTxtName);
+            this.fileManager.CreateFile(this.PlayerTxtName);
             //Get old game information from txt file
-            for (int counter = 0; counter < fileManager.ReadFromFile(ScoreTxtName).Count; counter++)
+            for (int counter = 0; counter < this.fileManager.ReadFromFile(this.ScoreTxtName).Count; counter++)
             {
                 try
                 {
-                    TopScores.Add(Convert.ToInt32(fileManager.ReadFromFile(ScoreTxtName)[counter]));
+                    this.TopScores.Add(Convert.ToInt32(this.fileManager.ReadFromFile(this.ScoreTxtName)[counter]));
                 }
                 catch (Exception ex)
                 {
@@ -319,17 +319,17 @@ namespace DDS_Trainer.Components
                 }
             }
             //Get old game information from txt file and assign to lbPlayerList
-            for (int counter = 0; counter < fileManager.ReadFromFile(PlayerTxtName).Count; counter++)
+            for (int counter = 0; counter < this.fileManager.ReadFromFile(this.PlayerTxtName).Count; counter++)
             {
                 try
                 {
-                    TopPlayers.Add(fileManager.ReadFromFile(PlayerTxtName)[counter]);
-                    if (lbPlayersList == null)
+                    this.TopPlayers.Add(this.fileManager.ReadFromFile(this.PlayerTxtName)[counter]);
+                    if (this.lbPlayersList == null)
                     {
                         this.lbPlayersList = new List<LeaderboardPLayers>();
                     }
-                    LeaderboardPLayers lbPlayers = new LeaderboardPLayers(PlayerScore: TopScores[counter],
-                                                                          PlayerName: TopPlayers[counter]);
+                    LeaderboardPLayers lbPlayers = new LeaderboardPLayers(PlayerScore: this.TopScores[counter],
+                                                                          PlayerName: this.TopPlayers[counter]);
                     this.lbPlayersList.Add(lbPlayers);
                 }
                 catch (Exception ex)
@@ -358,29 +358,29 @@ namespace DDS_Trainer.Components
         private void GenerateBooks(int bookQuantity, int xStart, int yStart, int ySubDisplacement)
         {
             Random random = new Random();
-            int xPos = 0;
+            var xPos = 0;
             xPos += xStart;
 
             for (int counter = 0; counter < bookQuantity; counter++)
             {
-                string generatedDecimal = (dDecimal.GenerateDD(minFractionLength: 0, maxFractionLength: 4));
+                string generatedDecimal = (this.dDecimal.GenerateDD(minFractionLength: 0, maxFractionLength: 4));
                 byte randomIndex = (byte)random.Next(minValue: 0, maxValue: imageListBooks.Images.Count);
-                SortedDecimalsList.Add(generatedDecimal);
+                this.SortedDecimalsList.Add(generatedDecimal);
                 Book newBook = new Book(bookAssets: imageListBooks, index: randomIndex, generatedDecimal);
                 newBook.Position.X = xPos;
                 newBook.Position.Y = yStart;
                 newBook.rect.X = newBook.Position.X;
                 newBook.rect.Y = newBook.Position.Y;
-                books.Add(newBook);
+                this.books.Add(newBook);
                 //They will have the same positions and size besides the y offset.
                 Rectangle submissionRect = new Rectangle(xPos, yStart - ySubDisplacement, newBook.Width, newBook.Height);
-                submissionPoints.Add(new SubmissionPoint(submissionRect));
+                this.submissionPoints.Add(new SubmissionPoint(submissionRect));
                 //xValue for how much space to make before another point should be drawn.
                 xPos += 95;
             }
             //Sort is the most effecient algorithm, can use DDSLibrary sorting class to use an actual algorithm
             //Visual studio analyses the data and chooses the most suited algorithm
-            SortedDecimalsList.Sort();
+            this.SortedDecimalsList.Sort();
             this.Invalidate();
         }
         //-----------------------------------------------------------------------------------------------//
@@ -390,23 +390,23 @@ namespace DDS_Trainer.Components
         /// <param name="placedBooksList"></param>
         private void checkBooks(List<string> placedBooksList)
         {
-            for (int counter = 0; counter < SortedDecimalsList.Count; counter++)
+            for (int counter = 0; counter < this.SortedDecimalsList.Count; counter++)
             {
                 this.CorrectOrder = true;
-                if (SortedDecimalsList[counter] != placedBooksList[counter])
+                if (this.SortedDecimalsList[counter] != placedBooksList[counter])
                 {
                     this.CorrectOrder = false;
                     break;
                 }
             }
-            if (CorrectOrder == true)
+            if (this.CorrectOrder == true)
             {
                 this.Score += 100;
                 this.AddedScore = true;
                 lblScore.Text = "SCORE: " + this.Score;
 
                 ResetGame();
-                GenerateBooks(bookQuantity: numberOfBooks, xStart: 290, yStart: 400, ySubDisplacement: 170);
+                GenerateBooks(bookQuantity: this.numberOfBooks, xStart: 290, yStart: 400, ySubDisplacement: 170);
             }
         }
         //-----------------------------------------------------------------------------------------------//
@@ -425,8 +425,8 @@ namespace DDS_Trainer.Components
         {
             btnPlay.Enabled = false;
             btnPlay.Visible = false;
-            lblScore.Text = "SCORE: " + Score;
-            GenerateBooks(bookQuantity: numberOfBooks, xStart: 290, yStart: 400, ySubDisplacement: 170);
+            lblScore.Text = "SCORE: " + this.Score;
+            GenerateBooks(bookQuantity: this.numberOfBooks, xStart: 290, yStart: 400, ySubDisplacement: 170);
             TimeTimer.Start();
         }
         //-----------------------------------------------------------------------------------------------//
@@ -439,26 +439,27 @@ namespace DDS_Trainer.Components
             btnPlay.Visible = true;
             countdownTime = TimeSpan.FromMinutes(2);
             ResetGame();
-            for (int counter = 0; counter < TopScores.Count; counter++)
+            for (int counter = 0; counter < this.TopScores.Count; counter++)
             {
-                if (TopScores.Count <= LeaderboardPlayerLimit-1)
+                if (this.TopScores.Count <= this.LeaderboardPlayerLimit -1)
                 {
                     NewHighScore();
                     UpdateLeaderboard();
                     break;
                 }
-                if (this.Score > TopScores[counter])
+                if (this.Score > this.TopScores[counter])
                 {
                     NewHighScore();
                     UpdateLeaderboard();
                     break;
                 }
             }
-            if (TopScores.Count == 0)
+            if (this.TopScores.Count == 0)
             {
                 NewHighScore();
                 UpdateLeaderboard();
             }
+            this.Score = 0;
             this.Invalidate();
         }
         //-----------------------------------------------------------------------------------------------//
@@ -482,10 +483,10 @@ namespace DDS_Trainer.Components
         /// <param name="enteredName"></param>
         private void GetNameFromCntrlHighScore(string enteredName)
         {
-            PlayerName = enteredName;
+            this.PlayerName = enteredName;
 
-            LeaderboardPLayers newPlayer = new LeaderboardPLayers(PlayerScore: this.Score, PlayerName: PlayerName);
-            if (lbPlayersList == null)
+            LeaderboardPLayers newPlayer = new LeaderboardPLayers(PlayerScore: this.Score, PlayerName: this.PlayerName);
+            if (this.lbPlayersList == null)
             {
                 this.lbPlayersList = new List<LeaderboardPLayers>();
             }
@@ -510,9 +511,9 @@ namespace DDS_Trainer.Components
             List<LeaderboardPLayers> SortedLbPlayers = this.lbPlayersList.OrderByDescending(p => p.score).ToList();
 
 
-            if (SortedLbPlayers.Count > LeaderboardPlayerLimit - 1)
+            if (SortedLbPlayers.Count > this.LeaderboardPlayerLimit - 1)
             {
-                for (int counter = LeaderboardPlayerLimit - 1; counter < SortedLbPlayers.Count; counter++)
+                for (int counter = this.LeaderboardPlayerLimit - 1; counter < SortedLbPlayers.Count; counter++)
                 {
                     int lastScoreIndex = SortedLbPlayers.Count - 1;
                     SortedLbPlayers.RemoveAt(lastScoreIndex);
@@ -521,31 +522,31 @@ namespace DDS_Trainer.Components
 
 
             //Recreate and write all to file.
-            if (fileManager.RecreateFile(ScoreTxtName) == true && 
-                fileManager.RecreateFile(ScoreDisplayTxtName) == true &&
-                fileManager.RecreateFile(PlayerTxtName) == true)
+            if (this.fileManager.RecreateFile(this.ScoreTxtName) == true && 
+                this.fileManager.RecreateFile(this.ScoreDisplayTxtName) == true &&
+                this.fileManager.RecreateFile(this.PlayerTxtName) == true)
             {
                 for (int counter = 0; counter < SortedLbPlayers.Count; counter++)
                 {
                     int rank = counter + 1;
-                    fileManager.WriteToFile(FileName: ScoreTxtName, 
+                    this.fileManager.WriteToFile(FileName: this.ScoreTxtName, 
                                             ContentToWrite: Convert.ToString(SortedLbPlayers[counter].score));
 
-                    fileManager.WriteToFile(FileName: PlayerTxtName,
+                    this.fileManager.WriteToFile(FileName: this.PlayerTxtName,
                                             ContentToWrite: SortedLbPlayers[counter].name);
-                    if (Score >= 1000)
+                    if (this.Score >= 1000)
                     {
-                        fileManager.WriteToFile(FileName: ScoreDisplayTxtName,
+                        this.fileManager.WriteToFile(FileName: this.ScoreDisplayTxtName,
                                             ContentToWrite: rank + "\t\t" + SortedLbPlayers[counter].score.ToString() + "\t" + SortedLbPlayers[counter].name);
                     }
-                    if (Score < 1000)
+                    if (this.Score < 1000)
                     {
-                        fileManager.WriteToFile(FileName: ScoreDisplayTxtName,
+                        this.fileManager.WriteToFile(FileName: this.ScoreDisplayTxtName,
                                             ContentToWrite: rank + "\t\t" + SortedLbPlayers[counter].score.ToString() + "\t\t" + SortedLbPlayers[counter].name);
                     }
                 }
             }
-            GameOver?.Invoke(this, EventArgs.Empty);
+            this.GameOver?.Invoke(this, EventArgs.Empty);
         }
         //-----------------------------------------------------------------------------------------------//
         /// <summary>
@@ -553,10 +554,10 @@ namespace DDS_Trainer.Components
         /// </summary>
         private void ResetGame() 
         {
-            books.Clear();
-            submissionPoints.Clear();
+            this.books.Clear();
+            this.submissionPoints.Clear();
 
-            SortedDecimalsList.Clear();
+            this.SortedDecimalsList.Clear();
             this.CorrectOrder = false;
         }
 

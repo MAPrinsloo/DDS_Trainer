@@ -131,6 +131,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\RBAscending.png" />
+    <None Include="Resources\RBUnslot2.png" />
+    <None Include="Resources\RBUnslot1.png" />
+    <None Include="Resources\RBTImer.png" />
+    <None Include="Resources\RBStartGame.png" />
+    <None Include="Resources\RBSnapAndMove.png" />
+    <None Include="Resources\RBScore.png" />
+    <None Include="Resources\RBMisplacedBooks.png" />
     <None Include="Resources\IAScoreTimeAdd.png" />
     <None Include="Resources\IANewPrompts.png" />
     <None Include="Resources\IAStartGame.png" />
